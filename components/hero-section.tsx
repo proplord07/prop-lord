@@ -19,7 +19,7 @@ export function HeroSection() {
             {/* Video Background */}
             <div className="absolute inset-0">
                 <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-                    <source src="/videos/propLord.mp4" type="video/mp4" />
+                    <source src="/videos/hero.mp4" type="video/mp4" />
                     {/* Fallback image if video doesn't load */}
                     {/* <div
                         className="w-full h-full bg-cover bg-center"
@@ -29,7 +29,7 @@ export function HeroSection() {
                     /> */}
                 </video>
                 {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute inset-0 bg-black/70"></div>
             </div>
 
             {/* Content */}
