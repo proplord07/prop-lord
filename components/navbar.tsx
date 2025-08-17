@@ -46,7 +46,7 @@ export function Navbar() {
                         <div className="flex-shrink-0 flex gap-3 items-center">
                             <Image src="/logo/prop-lord.jpeg" width={36} height={36} alt="prop-lord-logo" />
                             <h1 className={`text-2xl font-serif cursor-pointer hover:text-green-600 font-bold ${isScrolled ? "text-gray-950" : "text-white"}`}>
-                                Prop Lord
+                                PROPLORD
                             </h1>
                         </div>
                     </Link>

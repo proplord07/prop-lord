@@ -1,4 +1,4 @@
-import { Building2, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export function Footer() {
@@ -34,7 +34,7 @@ export function Footer() {
                                     <Image src="/logo/prop-lord.jpeg" width={36} height={36} alt="prop-lord-logo" />
                                 </div>
                                 <h3 className="text-2xl font-serif font-bold bg-gradient-to-r from-green-900 to-red-900 bg-clip-text text-transparent">
-                                    Prop Lord
+                                    PROPLORD
                                 </h3>
                             </div>
                             <p className="text-gray-600 leading-relaxed text-sm">
