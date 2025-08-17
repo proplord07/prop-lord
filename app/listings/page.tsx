@@ -556,6 +556,8 @@ export default function ListingsPage() {
                     </Pagination>
                 </div>
             </div>
+
+
         </div>
     );
 }
