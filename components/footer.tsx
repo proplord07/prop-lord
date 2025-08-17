@@ -31,7 +31,7 @@ export function Footer() {
                         <div className="space-y-6">
                             <div className="flex items-center space-x-2 group">
                                 <div className="relative">
-                                    <Image src="/logo/prop-lord.jpeg" width={36} height={36} alt="prop-lord-logo" />
+                                    <Image src="/logo/prop-lord.jpeg" width={36} height={36} alt="prop-lord-logo" className="rounded-md" />
                                 </div>
                                 <h3 className="text-2xl font-serif font-bold bg-gradient-to-r from-green-900 to-red-900 bg-clip-text text-transparent">
                                     PROPLORD

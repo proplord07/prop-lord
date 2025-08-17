@@ -61,23 +61,37 @@ const properties = [
         image: "/services/service3.jpg",
         rera: true,
     },
-    // Add more properties (30 total)
-    ...Array.from({ length: 300 }, (_, i) => ({
-        id: i + 4,
-        name: `Premium Residency ${i + 4}`,
-        location: ["Koramangala", "HSR Layout", "Indiranagar", "Jayanagar", "Malleshwaram"][i % 5],
-        status: ["Under Construction", "Ready to Move", "Launching Soon"][i % 3],
-        type: ["Apartment", "Villa", "Plot"][i % 3],
-        pricePerSqft: 5000 + i * 500,
-        minInvestment: `${(25 + i * 2).toFixed(1)} L`,
-        investmentPeriod: ["3 Years", "4 Years", "5 Years"][i % 3],
+    {
+        id: 4,
+        name: "South City",
+        location: "JP Nagar",
+        status: "Ready to Move",
+        type: "House",
+        pricePerSqft: 6500,
+        minInvestment: "35.4 L",
+        investmentPeriod: "4 Years",
         xirr: "XIRR",
-        valuation: ["Fairly Valued", "Overvalued", "Undervalued"][i % 3],
-        image: ["/services/service4.jpg", "/services/service5.jpg", "/services/service6.jpg"][
-            i % 3
-        ],
+        valuation: "Undervalued",
+        image: "/services/service3.jpg",
         rera: true,
-    })),
+    },
+    // Add more properties (30 total)
+    // ...Array.from({ length: 300 }, (_, i) => ({
+    //     id: i + 4,
+    //     name: `Premium Residency ${i + 4}`,
+    //     location: ["Koramangala", "HSR Layout", "Indiranagar", "Jayanagar", "Malleshwaram"][i % 5],
+    //     status: ["Under Construction", "Ready to Move", "Launching Soon"][i % 3],
+    //     type: ["Apartment", "Villa", "Plot"][i % 3],
+    //     pricePerSqft: 5000 + i * 500,
+    //     minInvestment: `${(25 + i * 2).toFixed(1)} L`,
+    //     investmentPeriod: ["3 Years", "4 Years", "5 Years"][i % 3],
+    //     xirr: "XIRR",
+    //     valuation: ["Fairly Valued", "Overvalued", "Undervalued"][i % 3],
+    //     image: ["/services/service4.jpg", "/services/service5.jpg", "/services/service6.jpg"][
+    //         i % 3
+    //     ],
+    //     rera: true,
+    // })),
 ];
 
 export default function ListingsPage() {
