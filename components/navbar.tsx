@@ -33,9 +33,9 @@ export function Navbar() {
     ];
 
     const servicesItems = [
+        { name: "Corporate Real Estate", href: "/corporate" },
         { name: "Residential Real Estate", href: "/residential" },
         { name: "Land and Industrial", href: "/land-industrial" },
-        { name: "Corporate Real Estate", href: "/corporate" },
         { name: "Warehousing & Logistics", href: "/warehousing" },
         { name: "Hospitality", href: "/hospitality" },
     ];
@@ -51,7 +51,7 @@ export function Navbar() {
                     <Link href={"/"} >
                         <div className="flex-shrink-0 flex gap-3 items-center">
                             <Image src="/logo/prop-lord.jpeg" width={36} height={36} alt="prop-lord-logo" className="rounded-md" />
-                            <h1 className={`text-2xl font-serif cursor-pointer hover:text-green-600 font-bold ${isScrolled ? "text-gray-950" : "text-white"}`}>
+                            <h1 className={`text-2xl font-serif cursor-pointer hover:text-[#00c4b6] font-bold ${isScrolled ? "text-gray-950" : "text-white"}`}>
                                 PROPLORD
                             </h1>
                         </div>
@@ -69,7 +69,7 @@ export function Navbar() {
                                         onMouseLeave={() => setIsServicesOpen(false)}
                                     >
                                         <button
-                                            className={`hover:text-green-600 tracking-widest px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${isScrolled ? "text-gray-800" : "text-white"}`}
+                                            className={`hover:text-[#00c4b6] tracking-widest px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${isScrolled ? "text-gray-800" : "text-white"}`}
                                         >
                                             {item.name}
                                             <ChevronDown
@@ -89,7 +89,7 @@ export function Navbar() {
                                                     <a
                                                         key={service.name}
                                                         href={service.href}
-                                                        className="block px-6 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 border-b border-gray-50 last:border-b-0 hover:pl-8 transform"
+                                                        className="block px-6 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-[#00c4b6] transition-all duration-200 border-b border-gray-50 last:border-b-0 hover:pl-8 transform"
                                                         style={{
                                                             animationDelay: `${index * 50}ms`,
                                                             animation: isServicesOpen ? "slideInLeft 0.3s ease-out forwards" : "none",
@@ -105,7 +105,7 @@ export function Navbar() {
                                     <a
                                         key={item.name}
                                         href={item.href}
-                                        className={`hover:text-green-600 tracking-widest px-3 py-2 text-sm font-medium transition-colors duration-200 ${isScrolled ? "text-gray-800" : "text-white"}`}
+                                        className={`hover:text-[#00c4b6] tracking-widest px-3 py-2 text-sm font-medium transition-colors duration-200 ${isScrolled ? "text-gray-800" : "text-white"}`}
                                     >
                                         {item.name}
                                     </a>

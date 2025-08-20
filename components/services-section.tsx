@@ -7,6 +7,14 @@ import Link from "next/link";
 
 const serviceImages = [
     {
+        src: "services/service1.jpg",
+        alt: "Corporate real estate building",
+        title: "Corporate Real Estate",
+        subtitle: "Premium office spaces and corporate headquarters",
+        icon: Building2,
+        link: "/corporate",
+    },
+    {
         src: "services/service2.jpg",
         alt: "Residential property",
         title: "Residential Real Estate",
@@ -21,14 +29,6 @@ const serviceImages = [
         subtitle: "Industrial plots and manufacturing facilities",
         icon: Factory,
         link: "/land-industrial",
-    },
-    {
-        src: "services/service1.jpg",
-        alt: "Corporate real estate building",
-        title: "Corporate Real Estate",
-        subtitle: "Premium office spaces and corporate headquarters",
-        icon: Building2,
-        link: "/corporate",
     },
     {
         src: "services/service5.jpg",
@@ -112,7 +112,7 @@ export function ServicesSection() {
                         }`}
                 >
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight font-montserrat">
-                        Real Estate  <ColourfulText text="Services" /> in India Like Never <ColourfulText text="Before" />
+                        Real Estate <span className="text-[#00c4b6]">Services</span>  in India Like Never  <span className="text-[#00c4b6]">Before</span>
                     </h2>
                     <p className="text-sm md:text-sm text-gray-600 max-w-4xl mx-auto leading-relaxed font-opensans">
                         {words}
@@ -129,7 +129,7 @@ export function ServicesSection() {
                         className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 group"
                         aria-label="Previous slide"
                     >
-                        <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-red-600 transition-colors" />
+                        <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-[#00c4b6] transition-colors" />
                     </button>
 
                     <button
@@ -137,7 +137,7 @@ export function ServicesSection() {
                         className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 group"
                         aria-label="Next slide"
                     >
-                        <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-red-600 transition-colors" />
+                        <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-[#00c4b6] transition-colors" />
                     </button>
 
                     <div
@@ -158,20 +158,20 @@ export function ServicesSection() {
                                                 <img
                                                     src={image.src || "/placeholder.svg"}
                                                     alt={image.alt}
-                                                    className="w-full h-full object-cover filter  transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                                                    className="w-full h-full object-cover filter transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
                                                 />
 
-                                                <div className="absolute inset-0 bg-gradient-to-b from-red-500/0 via-green-600/80 to-pink-700 transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-b from-red-500/0 via-green-600/80 to-pink-700 transform md:translate-y-full md:group-hover:translate-y-0 translate-y-0 transition-transform duration-700 ease-out"></div>
 
-                                                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 p-6 text-center">
-                                                    <div className="flex items-center justify-center mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-300">
+                                                <div className="absolute inset-0 flex flex-col items-center justify-center md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-all duration-500 delay-200 p-6 text-center">
+                                                    <div className="flex items-center justify-center mb-4 transform md:translate-y-4 md:group-hover:translate-y-0 translate-y-0 transition-transform duration-500 delay-300">
                                                         <IconComponent className="w-6 h-6 text-white mr-3" />
                                                         <h3 className="text-2xl font-bold text-white font-montserrat">{image.title}</h3>
                                                     </div>
-                                                    <p className="text-white/90 mb-4 font-opensans transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-400">
+                                                    <p className="text-white/90 mb-4 font-opensans transform md:translate-y-4 md:group-hover:translate-y-0 translate-y-0 transition-transform duration-500 delay-400">
                                                         {image.subtitle}
                                                     </p>
-                                                    <div className="flex items-center text-white font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-500">
+                                                    <div className="flex items-center text-white font-semibold transform md:translate-y-4 md:group-hover:translate-y-0 translate-y-0 transition-transform duration-500 delay-500">
                                                         <span className="mr-2">Explore</span>
                                                         <ChevronRight className="w-4 h-4" />
                                                     </div>
@@ -189,8 +189,9 @@ export function ServicesSection() {
                             <button
                                 key={index}
                                 onClick={() => scrollToIndex(index)}
-                                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-green-600 w-8" : "bg-gray-300 hover:bg-gray-400"
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8" : "bg-gray-300 hover:bg-gray-400"
                                     }`}
+                                style={index === currentIndex ? { backgroundColor: '#00c4b6' } : {}}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
                         ))}

@@ -91,7 +91,7 @@ export function BlogSection() {
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4 relative">
                         Our Latest Blogs
-                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#00c4b6] to-[#00c4b6] rounded-full"></div>
                     </h2>
                     <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto font-sans">
                         Stay updated with the latest trends and insights in the real estate industry
@@ -187,7 +187,7 @@ export function BlogSection() {
                                             </div>
 
                                             {/* Title */}
-                                            <h3 className="text-xl font-serif font-bold text-gray-900 mb-3 line-clamp-2 leading-tight group-hover:text-green-600 transition-colors duration-300">
+                                            <h3 className="text-xl font-serif font-bold text-gray-900 mb-3 line-clamp-2 leading-tight group-hover:text-[#00c4b6] transition-colors duration-300">
                                                 {post.title}
                                             </h3>
 
@@ -197,7 +197,7 @@ export function BlogSection() {
                                             {/* Read More Button */}
                                             <div className="flex justify-between items-center">
                                                 <Link href={`/blog/${post.slug}`}>
-                                                    <button className="group/btn relative bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform rounded-lg overflow-hidden">
+                                                    <button className="group/btn relative bg-[#00c4b6] hover:bg-[#108d84] text-white px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform rounded-lg overflow-hidden">
                                                         <span className="relative z-10">READ MORE</span>
                                                         {/* Button Shine Effect */}
                                                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-500"></div>

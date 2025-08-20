@@ -400,21 +400,21 @@ export default function ListingsPage() {
                                     </div>
 
                                     <CardContent className="pb-4">
-                                        <h3 className="font-semibold text-sm text-gray-900 mb-3 line-clamp-1 group-hover:text-blue-600 transition-colors duration-200">
+                                        <h3 className="font-semibold text-sm text-gray-900 mb-3 line-clamp-1 group-hover:text-[#00c4b6] transition-colors duration-200">
                                             {property.name}
                                         </h3>
 
                                         <div className="flex items-center justify-between text-xs text-gray-600 mb-4 group-hover:text-gray-700 transition-colors duration-200">
                                             <div className="flex items-center">
-                                                <MapPin className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
+                                                <MapPin className="h-3 w-3 mr-1 text-gray-400 group-hover:text-[#00c4b6] transition-colors duration-200" />
                                                 <span className="truncate">{property.location}</span>
                                             </div>
                                             <div className="flex items-center">
-                                                <Clock className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
+                                                <Clock className="h-3 w-3 mr-1 text-gray-400 group-hover:text-[#00c4b6] transition-colors duration-200" />
                                                 <span className="text-xs">{property.status}</span>
                                             </div>
                                             <div className="flex items-center">
-                                                <Building className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
+                                                <Building className="h-3 w-3 mr-1 text-gray-400 group-hover:text-[#00c4b6] transition-colors duration-200" />
                                                 <span className="text-xs">{property.type}</span>
                                             </div>
                                         </div>

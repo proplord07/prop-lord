@@ -1,135 +1,3 @@
-// "use client";
-
-// import type React from "react";
-// import { useState } from "react";
-// import { MultiStepLoader } from "@/components/ui/multi-step-loader";
-
-// export function ContactSection() {
-//     const [formData, setFormData] = useState({
-//         name: "",
-//         email: "",
-//         phone: "",
-//     });
-//     const [loading, setLoading] = useState(false);
-
-//     const loadingStates = [
-//         { text: "Processing your information..." },
-//         { text: "Connecting to WhatsApp..." },
-//         { text: "Opening chat window..." },
-//     ];
-
-//     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//         const { name, value } = e.target;
-//         setFormData((prev) => ({
-//             ...prev,
-//             [name]: value,
-//         }));
-//     };
-
-//     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-//         e.preventDefault();
-
-//         if (formData.name && formData.email && formData.phone) {
-//             setLoading(true);
-
-//             setTimeout(() => {
-//                 const message = `Hi, I'm ${formData.name}. I'm interested in your real estate services. Please contact me at ${formData.email}.`;
-//                 const whatsappUrl = `https://wa.me/${formData.phone.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
-//                 window.open(whatsappUrl, "_blank");
-//                 setLoading(false);
-//             }, 3000);
-//         }
-//     };
-
-//     const getCompletedFields = () => {
-//         let count = 0;
-//         if (formData.name) count++;
-//         if (formData.email) count++;
-//         if (formData.phone) count++;
-//         return count;
-//     };
-
-//     return (
-//         <section id="contact" className="py-12 ">
-//             <MultiStepLoader loadingStates={loadingStates} loading={loading} duration={1000} />
-
-//             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-//                 <div className="text-center mb-8">
-//                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Looking for a Property?</h2>
-//                     <p className="text-base text-gray-600 max-w-xl mx-auto">
-//                         Get in touch with one of our professionals. We'll help you find your perfect property.
-//                     </p>
-//                 </div>
-
-//                 <div className="max-w-2xl mx-auto">
-//                     {/* Progress indicator */}
-//                     <div className="mb-6">
-//                         <div className="flex justify-between items-center mb-2">
-//                             <span className="text-xs font-medium text-gray-600">Step {getCompletedFields()} of 3</span>
-//                             <span className="text-xs text-gray-500">{Math.round((getCompletedFields() / 3) * 100)}% Complete</span>
-//                         </div>
-//                         <div className="w-full bg-gray-200 rounded-full h-1.5">
-//                             <div
-//                                 className="bg-green-600 h-1.5 rounded-full transition-all duration-500 ease-out"
-//                                 style={{ width: `${(getCompletedFields() / 3) * 100}%` }}
-//                             />
-//                         </div>
-//                     </div>
-
-//                     <form onSubmit={handleSubmit} className="space-y-6">
-//                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-//                             <div>
-//                                 <input
-//                                     type="text"
-//                                     name="name"
-//                                     placeholder="Your Name"
-//                                     value={formData.name}
-//                                     onChange={handleChange}
-//                                     required
-//                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
-//                                 />
-//                             </div>
-//                             <div>
-//                                 <input
-//                                     type="email"
-//                                     name="email"
-//                                     placeholder="Email Address"
-//                                     value={formData.email}
-//                                     onChange={handleChange}
-//                                     required
-//                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
-//                                 />
-//                             </div>
-//                             <div>
-//                                 <input
-//                                     type="tel"
-//                                     name="phone"
-//                                     placeholder="Phone Number"
-//                                     value={formData.phone}
-//                                     onChange={handleChange}
-//                                     required
-//                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
-//                                 />
-//                             </div>
-//                         </div>
-
-//                         <div className="flex justify-center mt-6">
-//                             <button
-//                                 type="submit"
-//                                 disabled={loading || !formData.name || !formData.email || !formData.phone}
-//                                 className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-//                             >
-//                                 {loading ? "Processing..." : "Submit & Contact via WhatsApp"}
-//                             </button>
-//                         </div>
-//                     </form>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
-
-
 "use client";
 
 import type React from "react";
@@ -151,8 +19,8 @@ export function ContactSection() {
 
     const loadingStates = [
         { text: "Processing your information..." },
-        { text: "Connecting to WhatsApp..." },
-        { text: "Opening chat window..." },
+        { text: "Submitting your request..." },
+        { text: "Redirecting to thank you page..." },
     ];
 
     const validateName = (name: string) => {
@@ -234,10 +102,8 @@ export function ContactSection() {
             setLoading(true);
 
             setTimeout(() => {
-                const message = `Hi, I'm ${formData.name}. I'm interested in your real estate services. Please contact me at ${formData.email}.`;
-                const whatsappUrl = `https://wa.me/${formData.phone.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, "_blank");
-                setLoading(false);
+                // Redirect to thank you page
+                window.location.href = "/thank-you";
             }, 3000);
         }
     };
@@ -258,7 +124,7 @@ export function ContactSection() {
                 <div className="text-center mb-8">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Looking for a Property?</h2>
                     <p className="text-base text-gray-600 max-w-xl mx-auto">
-                        Get in touch with one of our professionals. We'll help you find your perfect property.
+                        Fill out the form below and our team will get back to you within 24 hours to help you find your perfect property.
                     </p>
                 </div>
 
@@ -271,8 +137,11 @@ export function ContactSection() {
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-1.5">
                             <div
-                                className="bg-green-600 h-1.5 rounded-full transition-all duration-500 ease-out"
-                                style={{ width: `${(getCompletedFields() / 3) * 100}%` }}
+                                className="h-1.5 rounded-full transition-all duration-500 ease-out"
+                                style={{
+                                    width: `${(getCompletedFields() / 3) * 100}%`,
+                                    backgroundColor: '#00c4b6'
+                                }}
                             />
                         </div>
                     </div>
@@ -288,8 +157,9 @@ export function ContactSection() {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     required
-                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-green-500"
+                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300"
                                         }`}
+                                    style={!errors.name ? { '--tw-ring-color': '#00c4b6' } as React.CSSProperties : {}}
                                 />
                                 {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
                             </div>
@@ -302,8 +172,9 @@ export function ContactSection() {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     required
-                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-green-500"
+                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300"
                                         }`}
+                                    style={!errors.email ? { '--tw-ring-color': '#00c4b6' } as React.CSSProperties : {}}
                                 />
                                 {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                             </div>
@@ -316,8 +187,9 @@ export function ContactSection() {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     required
-                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 ${errors.phone ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-green-500"
+                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 ${errors.phone ? "border-red-500 focus:ring-red-500" : "border-gray-300"
                                         }`}
+                                    style={!errors.phone ? { '--tw-ring-color': '#00c4b6' } as React.CSSProperties : {}}
                                 />
                                 {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
                             </div>
@@ -327,9 +199,9 @@ export function ContactSection() {
                             <button
                                 type="submit"
                                 disabled={loading || !formData.name || !formData.email || !formData.phone}
-                                className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="px-8 py-3 bg-[#00c4b6] hover:bg-[#00c4b6] text-white font-medium rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {loading ? "Processing..." : "Submit & Contact via WhatsApp"}
+                                {loading ? "Processing..." : "Submit Request"}
                             </button>
                         </div>
                     </form>

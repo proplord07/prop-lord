@@ -23,7 +23,7 @@ export function Footer() {
     ];
 
     return (
-        <footer className="relative bg-green-50 text-gray-800 overflow-hidden">
+        <footer className="relative bg-[#c1fffb] text-gray-800 overflow-hidden">
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="py-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -33,7 +33,7 @@ export function Footer() {
                                 <div className="relative">
                                     <Image src="/logo/prop-lord.jpeg" width={36} height={36} alt="prop-lord-logo" className="rounded-md" />
                                 </div>
-                                <h3 className="text-2xl font-serif font-bold bg-gradient-to-r from-green-900 to-red-900 bg-clip-text text-transparent">
+                                <h3 className="text-2xl font-serif font-bold bg-black bg-clip-text text-transparent">
                                     PROPLORD
                                 </h3>
                             </div>
@@ -42,20 +42,20 @@ export function Footer() {
                                 India with unmatched expertise and personalized approach.
                             </p>
                             <div className="space-y-3">
-                                <div className="flex items-center space-x-3 group hover:bg-green-100 p-2 rounded-lg transition-all duration-300">
-                                    <MapPin className="h-4 w-4 text-green-600 group-hover:text-red-500 transition-colors duration-300" />
+                                <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300">
+                                    <MapPin className="h-4 w-4 text-green-600 transition-colors duration-300" />
                                     <span className="text-gray-600 text-sm group-hover:text-gray-800 transition-colors duration-300">
                                         Bangalore, India
                                     </span>
                                 </div>
-                                <div className="flex items-center space-x-3 group hover:bg-green-100 p-2 rounded-lg transition-all duration-300 cursor-pointer">
-                                    <Phone className="h-4 w-4  text-green-600 group-hover:text-red-500 transition-colors duration-300" />
+                                <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300 cursor-pointer">
+                                    <Phone className="h-4 w-4  text-green-600 transition-colors duration-300" />
                                     <span className="text-gray-600 text-sm group-hover:text-gray-800 transition-colors duration-300">
                                         +91 7019402240
                                     </span>
                                 </div>
-                                <div className="flex items-center space-x-3 group hover:bg-green-100 p-2 rounded-lg transition-all duration-300 cursor-pointer">
-                                    <Mail className="h-4 w-4 text-green-600 group-hover:text-red-500 transition-colors duration-300" />
+                                <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300 cursor-pointer">
+                                    <Mail className="h-4 w-4 text-green-600 transition-colors duration-300" />
                                     <span className="text-gray-600 text-sm group-hover:text-gray-800 transition-colors duration-300">
                                         info@proplord.com
                                     </span>

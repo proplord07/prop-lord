@@ -73,8 +73,8 @@ export function TestimonialsSection() {
         >
             {/* Background decorative elements */}
             <div className="absolute inset-0 opacity-5">
-                <div className="absolute top-20 left-10 w-32 h-32 bg-green-500 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500 rounded-full blur-3xl"></div>
+                <div className="absolute top-20 left-10 w-32 h-32 bg-[#00c4b6] rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#00c4b6] rounded-full blur-3xl"></div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-purple-500 rounded-full blur-3xl"></div>
             </div>
 
@@ -83,7 +83,7 @@ export function TestimonialsSection() {
                     <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent mb-4">
                         Client Testimonials
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto rounded-full"></div>
+                    <div className="w-24 h-1 bg-gradient-to-r from-[#00ffff] to-[#00c4b6] mx-auto rounded-full"></div>
                 </div>
 
                 {/* Main testimonial container */}
@@ -93,14 +93,14 @@ export function TestimonialsSection() {
                         onClick={goToPrevious}
                         className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 group"
                     >
-                        <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors" />
+                        <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-[#00c4b6] transition-colors" />
                     </button>
 
                     <button
                         onClick={goToNext}
                         className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 group"
                     >
-                        <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors" />
+                        <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-[#00c4b6] transition-colors" />
                     </button>
 
                     {/* Testimonial cards container */}
@@ -114,7 +114,7 @@ export function TestimonialsSection() {
                                     <div className="bg-white/80 backdrop-blur-sm rounded-2xl transition-all duration-500 p-8 md:p-12 border border-gray-100 hover:border-green-200 group">
                                         {/* Quote icon */}
                                         <div className="flex justify-center mb-6">
-                                            <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-full p-4 group-hover:scale-110 transition-transform duration-300">
+                                            <div className="bg-gradient-to-r from-[#00ffff] to-[#00c4b6] rounded-full p-4 group-hover:scale-110 transition-transform duration-300">
                                                 <Quote className="w-8 h-8 text-white" />
                                             </div>
                                         </div>
@@ -127,7 +127,7 @@ export function TestimonialsSection() {
                                         {/* Author info */}
                                         <div className="text-center">
                                             <h4 className="text-xl font-bold text-gray-900 mb-1">{testimonial.name}</h4>
-                                            <p className="text-green-600 font-medium">{testimonial.designation}</p>
+                                            <p className="text-[#00c4b6] font-medium">{testimonial.designation}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@ export function TestimonialsSection() {
                             <button
                                 key={index}
                                 onClick={() => goToSlide(index)}
-                                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-green-600 scale-125" : "bg-gray-300 hover:bg-gray-400"
+                                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-[#00c4b6] scale-125" : "bg-gray-300 hover:bg-gray-400"
                                     }`}
                             />
                         ))}
@@ -152,7 +152,7 @@ export function TestimonialsSection() {
                 <div className="mt-8 max-w-md mx-auto">
                     <div className="bg-gray-200 rounded-full h-1 overflow-hidden">
                         <div
-                            className="bg-gradient-to-r from-green-500 to-green-600 h-full rounded-full transition-all duration-700 ease-out"
+                            className="bg-gradient-to-r from-[#00ffff] to-[#00c4b6] h-full rounded-full transition-all duration-700 ease-out"
                             style={{ width: `${((currentIndex + 1) / testimonials.length) * 100}%` }}
                         />
                     </div>

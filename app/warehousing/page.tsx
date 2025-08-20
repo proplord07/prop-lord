@@ -93,7 +93,7 @@ export default function WarehousingPage() {
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-montserrat">
                             Our Warehousing and Logistics Services
                         </h2>
-                        <div className="w-24 h-1 bg-green-600 mx-auto rounded-full"></div>
+                        <div className="w-24 h-1 bg-[#00c4b6] mx-auto rounded-full"></div>
                     </div>
 
                     <div
@@ -107,7 +107,7 @@ export default function WarehousingPage() {
                                         <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white mb-4">
                                             <div className="flex items-center gap-3">
                                                 <div className="p-2 bg-green-100 rounded-lg group-hover/card:bg-green-200 transition-colors duration-300">
-                                                    <IconComponent className="w-6 h-6 text-green-600" />
+                                                    <IconComponent className="w-6 h-6 text-[#00c4b6]" />
                                                 </div>
                                                 <span className="font-montserrat">{service.title}</span>
                                             </div>
@@ -119,8 +119,8 @@ export default function WarehousingPage() {
                                         >
                                             {service.description}
                                         </CardItem>
-                                        <CardItem translateZ="100" className="w-full mt-6">
-                                            <div className="h-1 bg-gradient-to-r from-green-400 to-green-600 rounded-full transform scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left"></div>
+                                        <CardItem translateZ="50" className="w-full mt-6">
+                                            <div className="h-1 bg-gradient-to-r from-[#51fcf0] to-[#00c4b6] rounded-full transform scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left"></div>
                                         </CardItem>
                                     </CardBody>
                                 </CardContainer>

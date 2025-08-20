@@ -94,7 +94,7 @@ export function BusinessPartnersSection() {
                                         alt={partner.name}
                                         width={150}
                                         height={150}
-                                        className="h-36 w-36 rounded-md object-contain"
+                                        className="h-60 w-60 rounded-md object-contain"
                                     />
                                 </div>
                             )),

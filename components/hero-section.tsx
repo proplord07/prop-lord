@@ -38,7 +38,7 @@ export function HeroSection() {
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
                         THE ONLY REAL ESTATE
                         <br />
-                        <FlipWords words={words} className="text-green-600 font-bold" />
+                        <FlipWords words={words} className="text-[#00c4b6] font-bold" />
                         <br />
                         YOU'LL EVER NEED
                     </h1>
@@ -47,7 +47,7 @@ export function HeroSection() {
                         <Link href="/listings">
                             <Button
                                 size="lg"
-                                className="bg-green-600 cursor-pointer hover:bg-green-700 text-white px-8 py-4 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                                className="bg-[#00c4b6] cursor-pointer hover:bg-[#108d84] text-white px-8 py-4 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
                             >
                                 EXPLORE
                             </Button>

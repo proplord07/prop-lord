@@ -158,7 +158,7 @@ Please get in touch with me. Thank you!`;
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-sans">
                             Our Hospitality Real Estate Services
                         </h2>
-                        <div className="w-24 h-1 bg-green-600 mx-auto rounded-full"></div>
+                        <div className="w-24 h-1 bg-[#00c4b6] mx-auto rounded-full"></div>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
@@ -171,7 +171,7 @@ Please get in touch with me. Thank you!`;
                                             <CardItem translateZ="50" className="text-xl font-bold text-gray-800 mb-4">
                                                 <div className="flex items-start gap-4">
                                                     <div className="p-3 bg-green-100 rounded-lg group-hover/card:bg-green-200 transition-colors duration-300 flex-shrink-0">
-                                                        <IconComponent className="w-6 h-6 text-green-600" />
+                                                        <IconComponent className="w-6 h-6 text-[#00c4b6]" />
                                                     </div>
                                                     <div>
                                                         <div className="w-6 h-1 bg-green-600 mb-3 rounded-full"></div>
@@ -186,8 +186,8 @@ Please get in touch with me. Thank you!`;
                                             >
                                                 {service.description}
                                             </CardItem>
-                                            <CardItem translateZ="100" className="w-full mt-6">
-                                                <div className="h-1 bg-gradient-to-r from-green-400 to-green-600 rounded-full transform scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left ml-16"></div>
+                                            <CardItem translateZ="50" className="w-full mt-6">
+                                                <div className="h-1 bg-gradient-to-r from-[#51fcf0] to-[#00c4b6] rounded-full transform scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left ml-16"></div>
                                             </CardItem>
                                         </CardBody>
                                     </CardContainer>
@@ -204,7 +204,7 @@ Please get in touch with me. Thank you!`;
                                     <CardItem translateZ="50" className="text-2xl font-bold text-gray-800 mb-6">
                                         <div className="flex items-center gap-3">
                                             <div className="p-2 bg-green-100 rounded-lg group-hover/card:bg-green-200 transition-colors duration-300">
-                                                <MessageSquare className="w-6 h-6 text-green-600" />
+                                                <MessageSquare className="w-6 h-6 text-[#00c4b6]" />
                                             </div>
                                             <span className="font-sans">Get In Touch</span>
                                         </div>
@@ -214,7 +214,7 @@ Please get in touch with me. Thank you!`;
                                         <CardItem translateZ="60" className="w-full">
                                             <div className="space-y-2">
                                                 <label className="text-xs font-medium text-gray-700 flex items-center gap-2">
-                                                    <User className="w-4 h-4 text-green-600" />
+                                                    <User className="w-4 h-4 text-[#00c4b6]" />
                                                     NAME
                                                 </label>
                                                 <Input
@@ -231,7 +231,7 @@ Please get in touch with me. Thank you!`;
                                         <CardItem translateZ="60" className="w-full">
                                             <div className="space-y-2">
                                                 <label className="text-xs font-medium text-gray-700 flex items-center gap-2">
-                                                    <Mail className="w-4 h-4 text-green-600" />
+                                                    <Mail className="w-4 h-4 text-[#00c4b6]" />
                                                     EMAIL
                                                 </label>
                                                 <Input
@@ -248,7 +248,7 @@ Please get in touch with me. Thank you!`;
                                         <CardItem translateZ="60" className="w-full">
                                             <div className="space-y-2">
                                                 <label className="text-xs font-medium text-gray-700 flex items-center gap-2">
-                                                    <Phone className="w-4 h-4 text-green-600" />
+                                                    <Phone className="w-4 h-4 text-[#00c4b6]" />
                                                     PHONE NO
                                                 </label>
                                                 <Input
@@ -278,7 +278,7 @@ Please get in touch with me. Thank you!`;
                                             <Button
                                                 type="submit"
                                                 disabled={isSubmitting}
-                                                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                                                className="w-full bg-[#00c4b6] hover:bg-[#00c4b6] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                                             >
                                                 {isSubmitting ? (
                                                     <div className="flex items-center gap-2">
