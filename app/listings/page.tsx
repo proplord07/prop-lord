@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { SlidersHorizontal, Search, MapPin, Clock, Building, Check, Diamond } from "lucide-react";
+import { SlidersHorizontal, Search, MapPin, Clock, Building, Check, Diamond, Loader2 } from "lucide-react";
 import Image from "next/image";
 import {
     Pagination,
@@ -17,84 +17,12 @@ import {
     PaginationNext,
     PaginationPrevious,
 } from "@/components/ui/pagination";
-
-const properties = [
-    {
-        id: 1,
-        name: "Sai Amogha By Sri Dwaraka",
-        location: "Margondanahalli",
-        status: "Under Construction",
-        type: "Apartment",
-        pricePerSqft: 6599,
-        minInvestment: "30.4 L",
-        investmentPeriod: "4 Years",
-        xirr: "XIRR",
-        valuation: "Fairly Valued",
-        image: "/services/service1.jpg",
-        rera: true,
-    },
-    {
-        id: 2,
-        name: "Sumadhura Folium",
-        location: "Whitefield",
-        status: "Under Construction",
-        type: "Apartment",
-        pricePerSqft: 14241,
-        minInvestment: "1.0 Cr",
-        investmentPeriod: "4 Years",
-        xirr: "XIRR",
-        valuation: "Overvalued",
-        image: "/services/service2.jpg",
-        rera: true,
-    },
-    {
-        id: 3,
-        name: "Bhoo Aabharana",
-        location: "Kyalasanahalli",
-        status: "Under Construction",
-        type: "Apartment",
-        pricePerSqft: 6500,
-        minInvestment: "35.4 L",
-        investmentPeriod: "4 Years",
-        xirr: "XIRR",
-        valuation: "Fairly Valued",
-        image: "/services/service3.jpg",
-        rera: true,
-    },
-    {
-        id: 4,
-        name: "South City",
-        location: "JP Nagar",
-        status: "Ready to Move",
-        type: "House",
-        pricePerSqft: 6500,
-        minInvestment: "35.4 L",
-        investmentPeriod: "4 Years",
-        xirr: "XIRR",
-        valuation: "Undervalued",
-        image: "/services/service3.jpg",
-        rera: true,
-    },
-    // Add more properties (30 total)
-    // ...Array.from({ length: 300 }, (_, i) => ({
-    //     id: i + 4,
-    //     name: `Premium Residency ${i + 4}`,
-    //     location: ["Koramangala", "HSR Layout", "Indiranagar", "Jayanagar", "Malleshwaram"][i % 5],
-    //     status: ["Under Construction", "Ready to Move", "Launching Soon"][i % 3],
-    //     type: ["Apartment", "Villa", "Plot"][i % 3],
-    //     pricePerSqft: 5000 + i * 500,
-    //     minInvestment: `${(25 + i * 2).toFixed(1)} L`,
-    //     investmentPeriod: ["3 Years", "4 Years", "5 Years"][i % 3],
-    //     xirr: "XIRR",
-    //     valuation: ["Fairly Valued", "Overvalued", "Undervalued"][i % 3],
-    //     image: ["/services/service4.jpg", "/services/service5.jpg", "/services/service6.jpg"][
-    //         i % 3
-    //     ],
-    //     rera: true,
-    // })),
-];
+import { Property, PropertyService } from "@/lib/property-service";
 
 export default function ListingsPage() {
+    const [properties, setProperties] = useState<Property[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
     const [locationFilter, setLocationFilter] = useState("");
@@ -106,6 +34,30 @@ export default function ListingsPage() {
 
     const itemsPerPage = 12;
 
+    // Fetch properties from API
+    useEffect(() => {
+        const fetchProperties = async () => {
+            try {
+                setLoading(true);
+                const fetchedProperties = await PropertyService.getProperties();
+                setProperties(fetchedProperties);
+            } catch (err) {
+                setError(err instanceof Error ? err.message : 'Failed to fetch properties');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProperties();
+    }, []);
+
+    // Get filter options from properties
+    const locations = [...new Set(properties.map((p) => p.location))];
+    const types = [...new Set(properties.map((p) => p.type))];
+    const statuses = [...new Set(properties.map((p) => p.status))];
+    const investmentPeriods = [...new Set(properties.map((p) => p.investment_period))];
+    const valuations = [...new Set(properties.map((p) => p.valuation))];
+
     const filteredProperties = properties.filter((property) => {
         return (
             property.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -114,7 +66,7 @@ export default function ListingsPage() {
             (statusFilter === "" || statusFilter === "all" || property.status === statusFilter) &&
             (investmentPeriodFilter === "" ||
                 investmentPeriodFilter === "all" ||
-                property.investmentPeriod === investmentPeriodFilter) &&
+                property.investment_period === investmentPeriodFilter) &&
             (valuationFilter === "" || valuationFilter === "all" || property.valuation === valuationFilter)
         );
     });
@@ -147,12 +99,6 @@ export default function ListingsPage() {
                 break;
         }
     };
-
-    const locations = [...new Set(properties.map((p) => p.location))];
-    const types = [...new Set(properties.map((p) => p.type))];
-    const statuses = [...new Set(properties.map((p) => p.status))];
-    const investmentPeriods = [...new Set(properties.map((p) => p.investmentPeriod))];
-    const valuations = [...new Set(properties.map((p) => p.valuation))];
 
     return (
         <div className="min-h-screen bg-white">
@@ -396,168 +342,196 @@ export default function ListingsPage() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="flex items-center justify-between mb-8">
-                    <p className="text-gray-600">
-                        Showing {paginatedProperties.length} of {filteredProperties.length} properties
-                    </p>
-                </div>
+                {/* Loading State */}
+                {loading && (
+                    <div className="flex flex-col items-center justify-center py-20">
+                        <Loader2 className="w-12 h-12 text-blue-600 animate-spin mb-4" />
+                        <p className="text-lg text-gray-600">Loading properties...</p>
+                    </div>
+                )}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-                    {paginatedProperties.map((property) => (
-                        <Card
-                            key={property.id}
-                            className="group overflow-hidden bg-white border border-gray-200 hover:shadow-xl hover:border-gray-300 hover:-translate-y-1 transition-all duration-300 ease-out cursor-pointer p-0"
-                        >
-                            <div className="relative overflow-hidden">
-                                <Image
-                                    src={property.image || "/placeholder.svg"}
-                                    alt={property.name}
-                                    width={400}
-                                    height={180}
-                                    className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
-                                />
+                {/* Error State */}
+                {error && !loading && (
+                    <div className="flex flex-col items-center justify-center py-20">
+                        <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+                            <p className="text-lg text-red-800 mb-2">Failed to load properties</p>
+                            <p className="text-sm text-red-600 mb-4">{error}</p>
+                            <Button
+                                onClick={() => window.location.reload()}
+                                variant="outline"
+                                className="border-red-300 text-red-700 hover:bg-red-50"
+                            >
+                                Try Again
+                            </Button>
+                        </div>
+                    </div>
+                )}
 
-                                {property.rera && (
-                                    <Badge className="absolute top-2 left-2 bg-white text-green-600 hover:bg-green-500 hover:text-white text-xs font-medium transition-all duration-200">
-                                        <Check className="h-3 w-3 mr-1" />
-                                        RERA
-                                    </Badge>
-                                )}
-                            </div>
+                {/* Content */}
+                {!loading && !error && (
+                    <>
+                        <div className="flex items-center justify-between mb-8">
+                            <p className="text-gray-600">
+                                Showing {paginatedProperties.length} of {filteredProperties.length} properties
+                            </p>
+                        </div>
 
-                            <CardContent className="pb-4">
-                                <h3 className="font-semibold text-sm text-gray-900 mb-3 line-clamp-1 group-hover:text-blue-600 transition-colors duration-200">
-                                    {property.name}
-                                </h3>
-
-                                <div className="flex items-center justify-between text-xs text-gray-600 mb-4 group-hover:text-gray-700 transition-colors duration-200">
-                                    <div className="flex items-center">
-                                        <MapPin className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
-                                        <span className="truncate">{property.location}</span>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <Clock className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
-                                        <span className="text-xs">{property.status}</span>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <Building className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
-                                        <span className="text-xs">{property.type}</span>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-3 mb-4">
-                                    <div className="group-hover:bg-gray-50 p-2 rounded transition-colors duration-200">
-                                        <p className="text-xs text-gray-500">Price / Sq ft</p>
-                                        <p className="font-semibold text-gray-900">₹{property.pricePerSqft.toLocaleString()}</p>
-                                    </div>
-                                    <div className="group-hover:bg-gray-50 p-2 rounded transition-colors duration-200">
-                                        <p className="text-xs text-gray-500">Min. Investment</p>
-                                        <p className="font-semibold text-gray-900">₹{property.minInvestment}</p>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-3 mb-4">
-                                    <div className="group-hover:bg-gray-50 p-2 rounded transition-colors duration-200">
-                                        <p className="text-xs text-gray-500">Investment Period</p>
-                                        <p className="text-sm font-medium text-gray-700">{property.investmentPeriod}</p>
-                                    </div>
-                                    <div className="group-hover:bg-gray-50 p-2 rounded transition-colors duration-200">
-                                        <p className="text-xs text-gray-500">Returns</p>
-                                        <p className="text-sm font-medium text-gray-700">{property.xirr}</p>
-                                    </div>
-                                </div>
-
-                                <Badge
-                                    variant="secondary"
-                                    className={`w-full justify-center py-1 text-xs font-medium transition-all duration-200 group-hover:scale-105 ${property.valuation === "Fairly Valued"
-                                        ? "bg-yellow-100 text-yellow-800 group-hover:bg-yellow-200"
-                                        : property.valuation === "Overvalued"
-                                            ? "bg-red-100 text-red-800 group-hover:bg-red-200"
-                                            : "bg-green-100 text-green-800 group-hover:bg-green-200"
-                                        }`}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+                            {paginatedProperties.map((property) => (
+                                <Card
+                                    key={property.id}
+                                    className="group overflow-hidden bg-white border border-gray-200 hover:shadow-xl hover:border-gray-300 hover:-translate-y-1 transition-all duration-300 ease-out cursor-pointer p-0"
                                 >
-                                    {property.valuation}
-                                    <span className="ml-2">
-                                        {property.valuation === "Overvalued" &&
-                                            "🤙"
-                                        }
-                                        {property.valuation === "Fairly Valued" &&
-                                            "👌"
-                                        }
-                                        {property.valuation === "Undervalued" &&
-                                            "🔥"
-                                        }
-                                    </span>
-                                </Badge>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
+                                    <div className="relative overflow-hidden">
+                                        <Image
+                                            src={property.image_url || "/placeholder.svg"}
+                                            alt={property.name}
+                                            width={400}
+                                            height={180}
+                                            className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
+                                        />
 
-                <div className="flex items-center justify-center mt-16">
-                    <Pagination>
-                        <PaginationContent>
-                            <PaginationItem>
-                                <PaginationPrevious
-                                    href="#"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        if (currentPage > 1) setCurrentPage(currentPage - 1);
-                                    }}
-                                    className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
-                                />
-                            </PaginationItem>
+                                        {property.rera && (
+                                            <Badge className="absolute top-2 left-2 bg-white text-green-600 hover:bg-green-500 hover:text-white text-xs font-medium transition-all duration-200">
+                                                <Check className="h-3 w-3 mr-1" />
+                                                RERA
+                                            </Badge>
+                                        )}
+                                    </div>
 
-                            {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
-                                let pageNumber;
-                                if (totalPages <= 5) {
-                                    pageNumber = i + 1;
-                                } else if (currentPage <= 3) {
-                                    pageNumber = i + 1;
-                                } else if (currentPage >= totalPages - 2) {
-                                    pageNumber = totalPages - 4 + i;
-                                } else {
-                                    pageNumber = currentPage - 2 + i;
-                                }
+                                    <CardContent className="pb-4">
+                                        <h3 className="font-semibold text-sm text-gray-900 mb-3 line-clamp-1 group-hover:text-blue-600 transition-colors duration-200">
+                                            {property.name}
+                                        </h3>
 
-                                return (
-                                    <PaginationItem key={pageNumber}>
-                                        <PaginationLink
+                                        <div className="flex items-center justify-between text-xs text-gray-600 mb-4 group-hover:text-gray-700 transition-colors duration-200">
+                                            <div className="flex items-center">
+                                                <MapPin className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
+                                                <span className="truncate">{property.location}</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <Clock className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
+                                                <span className="text-xs">{property.status}</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <Building className="h-3 w-3 mr-1 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
+                                                <span className="text-xs">{property.type}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="grid grid-cols-2 gap-3 mb-4">
+                                            <div className="group-hover:bg-gray-50 p-2 rounded transition-colors duration-200">
+                                                <p className="text-xs text-gray-500">Price / Sq ft</p>
+                                                <p className="font-semibold text-gray-900">₹{property.price_per_sqft.toLocaleString()}</p>
+                                            </div>
+                                            <div className="group-hover:bg-gray-50 p-2 rounded transition-colors duration-200">
+                                                <p className="text-xs text-gray-500">Min. Investment</p>
+                                                <p className="font-semibold text-gray-900">₹{property.min_investment}</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="grid grid-cols-2 gap-3 mb-4">
+                                            <div className="group-hover:bg-gray-50 p-2 rounded transition-colors duration-200">
+                                                <p className="text-xs text-gray-500">Investment Period</p>
+                                                <p className="text-sm font-medium text-gray-700">{property.investment_period}</p>
+                                            </div>
+                                            <div className="group-hover:bg-gray-50 p-2 rounded transition-colors duration-200">
+                                                <p className="text-xs text-gray-500">Returns</p>
+                                                <p className="text-sm font-medium text-gray-700">{property.xirr}</p>
+                                            </div>
+                                        </div>
+
+                                        <Badge
+                                            variant="secondary"
+                                            className={`w-full justify-center py-1 text-xs font-medium transition-all duration-200 group-hover:scale-105 ${property.valuation === "Fairly Valued"
+                                                ? "bg-yellow-100 text-yellow-800 group-hover:bg-yellow-200"
+                                                : property.valuation === "Overvalued"
+                                                    ? "bg-red-100 text-red-800 group-hover:bg-red-200"
+                                                    : "bg-green-100 text-green-800 group-hover:bg-green-200"
+                                                }`}
+                                        >
+                                            {property.valuation}
+                                            <span className="ml-2">
+                                                {property.valuation === "Overvalued" &&
+                                                    "🤙"
+                                                }
+                                                {property.valuation === "Fairly Valued" &&
+                                                    "👌"
+                                                }
+                                                {property.valuation === "Undervalued" &&
+                                                    "🔥"
+                                                }
+                                            </span>
+                                        </Badge>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+
+                        <div className="flex items-center justify-center mt-16">
+                            <Pagination>
+                                <PaginationContent>
+                                    <PaginationItem>
+                                        <PaginationPrevious
                                             href="#"
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                setCurrentPage(pageNumber);
+                                                if (currentPage > 1) setCurrentPage(currentPage - 1);
                                             }}
-                                            isActive={currentPage === pageNumber}
-                                        >
-                                            {pageNumber}
-                                        </PaginationLink>
+                                            className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
+                                        />
                                     </PaginationItem>
-                                );
-                            })}
 
-                            {totalPages > 5 && currentPage < totalPages - 2 && (
-                                <PaginationItem>
-                                    <PaginationEllipsis />
-                                </PaginationItem>
-                            )}
+                                    {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
+                                        let pageNumber;
+                                        if (totalPages <= 5) {
+                                            pageNumber = i + 1;
+                                        } else if (currentPage <= 3) {
+                                            pageNumber = i + 1;
+                                        } else if (currentPage >= totalPages - 2) {
+                                            pageNumber = totalPages - 4 + i;
+                                        } else {
+                                            pageNumber = currentPage - 2 + i;
+                                        }
 
-                            <PaginationItem>
-                                <PaginationNext
-                                    href="#"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-                                    }}
-                                    className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
-                                />
-                            </PaginationItem>
-                        </PaginationContent>
-                    </Pagination>
-                </div>
+                                        return (
+                                            <PaginationItem key={pageNumber}>
+                                                <PaginationLink
+                                                    href="#"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        setCurrentPage(pageNumber);
+                                                    }}
+                                                    isActive={currentPage === pageNumber}
+                                                >
+                                                    {pageNumber}
+                                                </PaginationLink>
+                                            </PaginationItem>
+                                        );
+                                    })}
+
+                                    {totalPages > 5 && currentPage < totalPages - 2 && (
+                                        <PaginationItem>
+                                            <PaginationEllipsis />
+                                        </PaginationItem>
+                                    )}
+
+                                    <PaginationItem>
+                                        <PaginationNext
+                                            href="#"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+                                            }}
+                                            className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
+                                        />
+                                    </PaginationItem>
+                                </PaginationContent>
+                            </Pagination>
+                        </div>
+                    </>
+                )}
             </div>
-
-
         </div>
     );
 }

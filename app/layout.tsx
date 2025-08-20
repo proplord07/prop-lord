@@ -5,6 +5,8 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
+import { Toaster } from "@/components/ui/sonner";
+import { AuthProvider } from "@/lib/auth-context";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -37,10 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} antialiased`}>
       <body className="font-sans">
-        <Navbar />
-        {children}
-        <Footer />
-        <WhatsAppFloat />
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <WhatsAppFloat />
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -2,14 +2,20 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, User, LogOut } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useAuth } from "@/lib/auth-context";
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const { user, signOut } = useAuth();
+
+    const handleLogout = async () => {
+        await signOut();
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,7 +28,7 @@ export function Navbar() {
     const navItems = [
         { name: "SERVICES", href: "#services", hasDropdown: true },
         { name: "EXPLORE LISTING", href: "/listings" },
-        { name: "BLOG", href: "#blog" },
+        { name: "BLOG", href: "/blog" },
         { name: "CONTACT US", href: "#contact" },
     ];
 
@@ -105,6 +111,22 @@ export function Navbar() {
                                     </a>
                                 ),
                             )}
+
+                            {/* Admin Section - Only show if user is authenticated */}
+                            {user && (
+                                <div className="flex items-center space-x-3 ml-8">
+                                    <Link href="/admin">
+                                        <Button
+                                            variant="outline"
+                                            size="sm"
+                                            className={`border-green-300 text-green-600 hover:bg-green-50 ${isScrolled ? "bg-white" : "bg-transparent"}`}
+                                        >
+                                            <User className="w-4 h-4 mr-2" />
+                                            Admin
+                                        </Button>
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -162,6 +184,24 @@ export function Navbar() {
                                         {item.name}
                                     </a>
                                 ),
+                            )}
+
+                            {/* Mobile Admin Section - Only show if user is authenticated */}
+                            {user && (
+                                <div className="pt-4 border-t border-gray-200 mt-4">
+                                    <div className="space-y-3">
+                                        <Link href="/admin" className="block">
+                                            <Button
+                                                variant="outline"
+                                                className="w-full border-green-300 text-green-600 hover:bg-green-50"
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                            >
+                                                <User className="w-4 h-4 mr-2" />
+                                                Admin Dashboard
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                </div>
                             )}
                         </div>
                     </div>
