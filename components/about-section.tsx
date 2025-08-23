@@ -30,7 +30,7 @@ const aboutData = [
 export function AboutSection() {
 
     return (
-        <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+        <section id="about" className="bg-gradient-to-br from-gray-50 to-white overflow-hidden">
             <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="space-y-16">
                     {aboutData.map((item, index) => (

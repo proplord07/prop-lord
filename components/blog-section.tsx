@@ -77,7 +77,7 @@ export function BlogSection() {
         <section
             id="blog"
             ref={sectionRef}
-            className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden"
+            className="py-10 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden"
         >
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full opacity-30 animate-pulse"></div>

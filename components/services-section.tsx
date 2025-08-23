@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Building2, Home, Factory, Hotel, ShoppingBag, Warehouse, Truck } from "lucide-react";
-import ColourfulText from "./ui/colourful-text";
+import { ChevronLeft, ChevronRight, Building2, Home, Factory, Hotel, Warehouse } from "lucide-react";
 import Link from "next/link";
 
 const serviceImages = [
@@ -105,7 +104,7 @@ export function ServicesSection() {
     }, [currentIndex]);
 
     return (
-        <section id="services" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <section id="services" ref={sectionRef} className="lg:py-20 pt-10 bg-gradient-to-br from-gray-50 to-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
                     className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
