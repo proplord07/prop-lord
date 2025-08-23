@@ -18,6 +18,7 @@ import {
     PaginationPrevious,
 } from "@/components/ui/pagination";
 import { Property, PropertyService } from "@/lib/property-service";
+import { LeadDialog } from "@/components/lead-dialog";
 
 export default function ListingsPage() {
     const [properties, setProperties] = useState<Property[]>([]);
@@ -31,6 +32,8 @@ export default function ListingsPage() {
     const [investmentPeriodFilter, setInvestmentPeriodFilter] = useState("");
     const [valuationFilter, setValuationFilter] = useState("");
     const [showFilters, setShowFilters] = useState(false);
+    const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
+    const [isLeadDialogOpen, setIsLeadDialogOpen] = useState(false);
 
     const itemsPerPage = 12;
 
@@ -98,6 +101,16 @@ export default function ListingsPage() {
                 setValuationFilter(actualValue);
                 break;
         }
+    };
+
+    const handlePropertyClick = (property: Property) => {
+        setSelectedProperty(property);
+        setIsLeadDialogOpen(true);
+    };
+
+    const handleCloseLeadDialog = () => {
+        setIsLeadDialogOpen(false);
+        setSelectedProperty(null);
     };
 
     return (
@@ -381,6 +394,7 @@ export default function ListingsPage() {
                                 <Card
                                     key={property.id}
                                     className="group overflow-hidden bg-white border border-gray-200 hover:shadow-xl hover:border-gray-300 hover:-translate-y-1 transition-all duration-300 ease-out cursor-pointer p-0"
+                                    onClick={() => handlePropertyClick(property)}
                                 >
                                     <div className="relative overflow-hidden">
                                         <Image
@@ -532,6 +546,17 @@ export default function ListingsPage() {
                     </>
                 )}
             </div>
+
+            {/* Lead Dialog */}
+            {isLeadDialogOpen && selectedProperty && (
+                <LeadDialog
+                    isOpen={isLeadDialogOpen}
+                    onClose={handleCloseLeadDialog}
+                    property={selectedProperty}
+                />
+            )}
+
+
         </div>
     );
 }

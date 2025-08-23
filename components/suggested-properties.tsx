@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, MapPin, Building, Star } from "lucide-react"
 import { Property, PropertyService } from "@/lib/property-service";
 import Link from "next/link";
 import Image from "next/image";
+import { LeadDialog } from "@/components/lead-dialog";
 
 export function SuggestedProperties() {
     const [properties, setProperties] = useState<Property[]>([]);
@@ -12,6 +13,8 @@ export function SuggestedProperties() {
     const [error, setError] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
+    const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
+    const [isLeadDialogOpen, setIsLeadDialogOpen] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -71,6 +74,16 @@ export function SuggestedProperties() {
         setCurrentPage(page);
     };
 
+    const handlePropertyClick = (property: Property) => {
+        setSelectedProperty(property);
+        setIsLeadDialogOpen(true);
+    };
+
+    const handleCloseLeadDialog = () => {
+        setIsLeadDialogOpen(false);
+        setSelectedProperty(null);
+    };
+
     if (loading) {
         return (
             <section id="suggested-properties" className="py-20 bg-gradient-to-br from-gray-50 to-white">
@@ -81,9 +94,18 @@ export function SuggestedProperties() {
                         </h2>
                     </div>
                     <div className="flex justify-center">
-                        <div className="w-16 h-16 border-4 border-gray-300 border-t-[#00c4b6] rounded-full animate-spin"></div>
+                        <div className="w-16 h-16 border-4 border-gray-300 border-t-[#00c4b6] rounded-full animate-spin">                    </div>
                     </div>
                 </div>
+
+                {/* Lead Dialog */}
+                {isLeadDialogOpen && selectedProperty && (
+                    <LeadDialog
+                        isOpen={isLeadDialogOpen}
+                        onClose={handleCloseLeadDialog}
+                        property={selectedProperty}
+                    />
+                )}
             </section>
         );
     }
@@ -135,7 +157,7 @@ export function SuggestedProperties() {
                 <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                     <div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                            Suggested Investment <span style={{ color: '#00c4b6' }}>Opportunities</span>
+                            Hot Investment <span style={{ color: '#00c4b6' }}>Opportunities</span>
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl">
                             Discover premium real estate investment opportunities with attractive returns
@@ -157,8 +179,12 @@ export function SuggestedProperties() {
                 <div className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                         {currentProperties.map((property) => (
-                            <div key={property.id} className="group">
-                                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] overflow-hidden border border-gray-100">
+                            <div
+                                key={property.id}
+                                className="group cursor-pointer"
+                                onClick={() => handlePropertyClick(property)}
+                            >
+                                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] overflow-hidden border border-gray-100 hover:border-[#00c4b6]">
                                     {/* Property Image */}
                                     <div className="relative h-48 overflow-hidden">
                                         {property.image_url ? (
@@ -242,6 +268,13 @@ export function SuggestedProperties() {
                                                 <span>{property.total_area_sqft.toLocaleString()} sq ft</span>
                                             )}
                                         </div>
+
+                                        {/* Click Hint */}
+                                        <div className="mt-3 text-center">
+                                            <span className="text-xs text-[#00c4b6] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                Click to learn more
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -286,6 +319,16 @@ export function SuggestedProperties() {
                     </div>
                 </div>
             </div>
+
+
+            {/* Lead Dialog */}
+            {isLeadDialogOpen && selectedProperty && (
+                <LeadDialog
+                    isOpen={isLeadDialogOpen}
+                    onClose={handleCloseLeadDialog}
+                    property={selectedProperty}
+                />
+            )}
         </section>
     );
 }
