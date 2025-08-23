@@ -37,7 +37,7 @@ export default function ResidentialPage() {
         {
             title: "New Launch Sales",
             description:
-                "Our team connects with various builders to provide you with home buying options or investing options during the project launch period of the project. Assisting you in negotiations to help you mitigate any risks.",
+                "Our team connects with builders to provide you with home buying options or investing options during the project launch period of the project. Assisting you in negotiations to help you mitigate any risks.",
             icon: Rocket,
         },
         {
