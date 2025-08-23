@@ -7,7 +7,7 @@ const aboutData = [
     {
         title: "Who we are?",
         description:
-            "With a consulting and advisory approach to real estate brokerage services, Address Advisors is your one-stop solution for all real estate needs. With over 100+ years of consolidated experience, we have grown from a boutique firm to a leading property consulting organization.",
+            "",
         image: "/about-us/us.jpg",
         gradient: "from-blue-600 via-purple-600 to-indigo-800",
     },
