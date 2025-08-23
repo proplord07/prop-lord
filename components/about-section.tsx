@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -29,30 +28,25 @@ const aboutData = [
 ];
 
 export function AboutSection() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
-        <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+            <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="space-y-16">
                     {aboutData.map((item, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             viewport={{ once: true }}
                             className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                                } items-center gap-12 lg:gap-16`}
+                                } items-center gap-8 lg:gap-16 overflow-hidden`}
                         >
                             {/* Image Section */}
-                            <div className="flex-1 relative group">
-                                <motion.div
-                                    className="relative overflow-hidden rounded-2xl shadow-2xl"
-                                    onHoverStart={() => setHoveredIndex(index)}
-                                    onHoverEnd={() => setHoveredIndex(null)}
-                                    whileHover={{ scale: 1.02 }}
-                                    transition={{ duration: 0.3 }}
+                            <div className="flex-1 relative group w-full">
+                                <div
+                                    className="relative overflow-hidden rounded-2xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-300"
                                 >
                                     <div
                                         className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-10`}
@@ -62,17 +56,17 @@ export function AboutSection() {
                                         alt={item.title}
                                         width={600}
                                         height={500}
-                                        className="w-full h-[400px] lg:h-[500px] object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
+                                        className="w-full h-[400px] lg:h-[300px] object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
                                     />
-                                </motion.div>
+                                </div>
                             </div>
 
                             {/* Content Section */}
-                            <div className="flex-1 space-y-6">
+                            <div className="flex-1 space-y-6 w-full overflow-hidden">
                                 <motion.div
                                     className="space-y-4"
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                                    whileInView={{ opacity: 1 }}
+                                    initial={{ opacity: 0 }}
                                     transition={{ duration: 0.6, delay: 0.3 }}
                                     viewport={{ once: true }}
                                 >
@@ -81,7 +75,7 @@ export function AboutSection() {
                                         <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 font-montserrat">{item.title}</h3>
                                     </div>
 
-                                    <p className="text-sm text-gray-600 leading-relaxed font-opensans max-w-2xl">{item.description}</p>
+                                    <p className="text-sm text-gray-600 leading-relaxed font-opensans max-w-full lg:max-w-2xl">{item.description}</p>
                                 </motion.div>
                             </div>
                         </motion.div>

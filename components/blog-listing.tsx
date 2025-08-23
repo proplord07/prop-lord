@@ -17,35 +17,54 @@ const getCategoryColor = (category: string): string => {
     return colorMap[category] || "bg-gray-600";
 };
 
-export function BlogSection() {
+const categories = [
+    "All Categories",
+    "Residential Sector",
+    "Commercial Sector",
+    "Warehousing Sector",
+    "Land Development",
+    "Hospitality Sector",
+    "Corporate Sector"
+];
+
+export function BlogListing() {
     const [visibleCards, setVisibleCards] = useState<number[]>([]);
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+    const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("All Categories");
+    const [currentPage, setCurrentPage] = useState(1);
+    const postsPerPage = 9;
     const sectionRef = useRef<HTMLElement>(null);
 
-    // Fetch blogs from API - only 3 most recent
+    // Fetch all blogs from API
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
                 setLoading(true);
-                const response = await fetch('/api/blogs?limit=3');
+                const response = await fetch('/api/blogs');
                 if (response.ok) {
                     const result = await response.json();
                     if (result.success) {
                         setBlogPosts(result.data);
+                        setFilteredPosts(result.data);
                     } else {
                         setError(result.error || 'Failed to fetch blogs');
                         setBlogPosts([]);
+                        setFilteredPosts([]);
                     }
                 } else {
                     setError('Failed to fetch blogs');
                     setBlogPosts([]);
+                    setFilteredPosts([]);
                 }
             } catch (error) {
                 console.error('Error fetching blogs:', error);
                 setError('Failed to fetch blogs');
                 setBlogPosts([]);
+                setFilteredPosts([]);
             } finally {
                 setLoading(false);
             }
@@ -54,6 +73,33 @@ export function BlogSection() {
         fetchBlogs();
     }, []);
 
+    // Filter blogs based on search term and category
+    useEffect(() => {
+        let filtered = blogPosts;
+
+        if (searchTerm) {
+            filtered = filtered.filter(post =>
+                post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                post.category.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+
+        if (selectedCategory !== "All Categories") {
+            filtered = filtered.filter(post => post.category === selectedCategory);
+        }
+
+        setFilteredPosts(filtered);
+        setCurrentPage(1); // Reset to first page when filtering
+    }, [searchTerm, selectedCategory, blogPosts]);
+
+    // Pagination logic
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+    const startIndex = (currentPage - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+    const currentPosts = filteredPosts.slice(startIndex, endIndex);
+
+    // Intersection Observer for animations
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -71,13 +117,22 @@ export function BlogSection() {
         cards?.forEach((card) => observer.observe(card));
 
         return () => observer.disconnect();
-    }, [blogPosts]);
+    }, [currentPosts]);
+
+    // Reset visible cards when page changes
+    useEffect(() => {
+        setVisibleCards([]);
+    }, [currentPage]);
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     return (
         <section
-            id="blog"
             ref={sectionRef}
-            className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden"
+            className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden min-h-screen"
         >
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full opacity-30 animate-pulse"></div>
@@ -88,21 +143,70 @@ export function BlogSection() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4 relative">
-                        Our Latest Blogs
+                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4 relative">
+                        All Blog Posts
                         <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#00c4b6] to-[#00c4b6] rounded-full"></div>
-                    </h2>
+                    </h1>
                     <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto font-sans">
-                        Stay updated with the latest trends and insights in the real estate industry
+                        Explore our complete collection of real estate insights, trends, and expert advice
                     </p>
+                </div>
+
+                {/* Search and Filter Section */}
+                <div className="mb-12 space-y-6">
+                    {/* Search Bar */}
+                    <div className="max-w-2xl mx-auto">
+                        <div className="relative">
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Search blogs by title, content, or category..."
+                                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-[#00c4b6] focus:border-[#00c4b6] text-sm"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Category Filter */}
+                    <div className="flex flex-wrap justify-center gap-3">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => setSelectedCategory(category)}
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === category
+                                    ? "bg-[#00c4b6] text-white shadow-lg"
+                                    : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
+                                    }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Results Count */}
+                    <div className="text-center text-gray-600">
+                        {!loading && (
+                            <p className="text-sm">
+                                Showing {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}
+                                {searchTerm && ` for "${searchTerm}"`}
+                                {selectedCategory !== "All Categories" && ` in ${selectedCategory}`}
+                            </p>
+                        )}
+                    </div>
                 </div>
 
                 {/* Loading State */}
                 {loading && (
                     <div className="text-center py-12">
                         <div className="inline-flex items-center space-x-2">
-                            <div className="w-6 h-6 border-2 border-green-600 border-t-transparent rounded-full animate-spin"></div>
+                            <div className="w-6 h-6 border-2 border-[#00c4b6] border-t-transparent rounded-full animate-spin"></div>
                             <span className="text-gray-600 text-lg">Loading blogs...</span>
                         </div>
                     </div>
@@ -125,10 +229,10 @@ export function BlogSection() {
                 )}
 
                 {/* Blog Posts Grid */}
-                {!loading && !error && blogPosts.length > 0 && (
+                {!loading && !error && currentPosts.length > 0 && (
                     <>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {blogPosts.map((post, index) => {
+                            {currentPosts.map((post, index) => {
                                 const isVisible = visibleCards.includes(index);
 
                                 return (
@@ -177,7 +281,7 @@ export function BlogSection() {
                                                             strokeLinecap="round"
                                                             strokeLinejoin="round"
                                                             strokeWidth={2}
-                                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"
                                                         />
                                                     </svg>
                                                     {new Date(post.created_at).toLocaleDateString('en-US', {
@@ -230,25 +334,74 @@ export function BlogSection() {
                             })}
                         </div>
 
-                        {/* View All Blogs Button */}
-                        <div className="text-center mt-12">
-                            <Link href="/blog">
-                                <button className="group relative bg-white hover:bg-[#00c4b6] text-[#00c4b6] hover:text-white border-2 border-[#00c4b6] px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform rounded-lg overflow-hidden">
-                                    <span className="relative z-10">View All Blogs</span>
-                                    {/* Button Shine Effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-                                </button>
-                            </Link>
-                        </div>
+                        {/* Pagination */}
+                        {totalPages > 1 && (
+                            <div className="mt-16 flex justify-center">
+                                <div className="flex items-center space-x-2">
+                                    {/* Previous Button */}
+                                    <button
+                                        onClick={() => handlePageChange(currentPage - 1)}
+                                        disabled={currentPage === 1}
+                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${currentPage === 1
+                                            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                                            : "bg-white text-gray-700 hover:bg-[#00c4b6] hover:text-white border border-gray-200"
+                                            }`}
+                                    >
+                                        Previous
+                                    </button>
+
+                                    {/* Page Numbers */}
+                                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                                        <button
+                                            key={page}
+                                            onClick={() => handlePageChange(page)}
+                                            className={`w-10 h-10 rounded-lg text-sm font-medium transition-all duration-300 ${currentPage === page
+                                                ? "bg-[#00c4b6] text-white shadow-lg"
+                                                : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
+                                                }`}
+                                        >
+                                            {page}
+                                        </button>
+                                    ))}
+
+                                    {/* Next Button */}
+                                    <button
+                                        onClick={() => handlePageChange(currentPage + 1)}
+                                        disabled={currentPage === totalPages}
+                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${currentPage === totalPages
+                                            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                                            : "bg-white text-gray-700 hover:bg-[#00c4b6] hover:text-white border border-gray-200"
+                                            }`}
+                                    >
+                                        Next
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </>
                 )}
 
                 {/* No Blogs State */}
-                {!loading && !error && blogPosts.length === 0 && (
+                {!loading && !error && filteredPosts.length === 0 && (
                     <div className="text-center py-12">
                         <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 max-w-md mx-auto">
                             <div className="text-gray-500 text-lg font-medium mb-2">📝 No Blogs Found</div>
-                            <p className="text-gray-600 text-sm mb-4">We haven't published any blog posts yet. Check back soon!</p>
+                            <p className="text-gray-600 text-sm mb-4">
+                                {searchTerm || selectedCategory !== "All Categories"
+                                    ? "Try adjusting your search or filter criteria."
+                                    : "We haven't published any blog posts yet. Check back soon!"}
+                            </p>
+                            {(searchTerm || selectedCategory !== "All Categories") && (
+                                <button
+                                    onClick={() => {
+                                        setSearchTerm("");
+                                        setSelectedCategory("All Categories");
+                                    }}
+                                    className="bg-[#00c4b6] hover:bg-[#108d84] text-white px-4 py-2 rounded-lg text-sm font-medium"
+                                >
+                                    Clear Filters
+                                </button>
+                            )}
                         </div>
                     </div>
                 )}
