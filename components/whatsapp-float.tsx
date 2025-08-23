@@ -178,7 +178,7 @@ export default function WhatsAppFloat() {
                                         <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
                                             <span className="text-blue-600 font-bold text-lg">A</span>
                                         </div>
-                                        <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
+                                        <div className="absolute lg:-bottom-1 lg:-left-1 left-[30px] w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
                                     </div>
 
                                     {/* Name and Role */}
