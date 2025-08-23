@@ -186,7 +186,7 @@ export function SuggestedProperties() {
                             >
                                 <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] overflow-hidden border border-gray-100 hover:border-[#00c4b6]">
                                     {/* Property Image */}
-                                    <div className="relative h-48 overflow-hidden">
+                                    <div className="relative h-36 overflow-hidden">
                                         {property.image_url ? (
                                             <Image
                                                 src={property.image_url}
