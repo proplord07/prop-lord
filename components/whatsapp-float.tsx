@@ -66,7 +66,7 @@ export default function WhatsAppFloat() {
 
                                     {/* Name and Role */}
                                     <div className="text-white">
-                                        <h3 className="font-semibold text-lg">Apoorv Bhat</h3>
+                                        <h3 className="font-semibold text-lg">Team Proplord</h3>
                                         <p className="text-sm opacity-90">Real Estate Consultant</p>
                                     </div>
                                 </div>
