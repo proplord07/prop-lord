@@ -1,58 +1,3 @@
-// "use client";
-// import { ThreeDMarquee } from "@/components/ui/3d-marquee";
-
-// export function BusinessPartnersSection() {
-//     const images = [
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-//         "/partners/godrej.webp",
-//         "/partners/birla.jpg",
-//         "/partners/prest.webp",
-//         "/partners/sobha.jpg",
-
-
-//     ];
-//     return (
-//         <div className="mx-auto my-10 max-w-7xl rounded-3xl bg-gray-950/0 p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
-//             <ThreeDMarquee images={images} className="" />
-//         </div>
-//     );
-// }
-
 "use client";
 
 import Image from "next/image";
@@ -74,6 +19,206 @@ const partners = [
         name: "Godrej Properties",
         logo: "/partners/bestates.jpg",
     },
+    {
+        name: "Godrej Properties",
+        logo: "/partners/one.png",
+    },
+    {
+        name: "Godrej Properties",
+        logo: "/partners/two.png",
+    },
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/three.png",
+    },
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/four.png",
+    },
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/five.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/six.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/seven.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/eight.png",
+    },
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/9.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/10.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/11.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/12.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/13.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/14.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/15.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/16.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/17.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/18.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/19.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/20.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/21.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/22.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/23.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/24.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/25.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/26.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/27.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/28.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/29.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/30.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/31.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/32.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/33.png",
+    },
+
+
+    {
+        name: "Godrej Properties",
+        logo: "/partners/34.png",
+    },
+
+
+
+
 ];
 
 export function BusinessPartnersSection() {
@@ -94,7 +239,7 @@ export function BusinessPartnersSection() {
                                         alt={partner.name}
                                         width={150}
                                         height={150}
-                                        className="h-60 w-60 rounded-md object-contain"
+                                        className="h-40 w-40 rounded-md object-contain"
                                     />
                                 </div>
                             )),
