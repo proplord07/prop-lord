@@ -260,15 +260,6 @@ export function SuggestedProperties() {
                                                 </p>
                                             </div>
                                         </div>
-
-                                        {/* Property Type & Area */}
-                                        <div className="flex items-center justify-between mt-3 text-sm text-gray-600">
-                                            <span>{property.type}</span>
-                                            {property.total_area_sqft && (
-                                                <span>{property.total_area_sqft.toLocaleString()} sq ft</span>
-                                            )}
-                                        </div>
-
                                         {/* Click Hint */}
                                         <div className="mt-3 text-center">
                                             <span className="text-xs text-[#00c4b6] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
