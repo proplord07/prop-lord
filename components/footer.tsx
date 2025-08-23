@@ -1,17 +1,17 @@
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
     const services = [
-        "Corporate Real Estate",
-        "Residential Real Estate",
-        "Warehousing & Logistics",
-        "Land & Industrial",
-        "Hospitality",
-        "Retail Real Estate",
+        { name: "Corporate Real Estate", href: "/corporate" },
+        { name: "Residential Real Estate", href: "/residential" },
+        { name: "Land & Industrial", href: "/land-industrial" },
+        { name: "Warehousing & Logistics", href: "/warehousing" },
+        { name: "Hospitality", href: "/hospitality" },
     ];
 
-    const quickLinks = ["About Us", "Careers", "Blog", "Contact Us", "Privacy Policy", "Terms of Service"];
+    const quickLinks = [{ name: "Blog", href: "/blog" }];
 
     const locations = [
         "Office Space in Bangalore",
@@ -41,7 +41,7 @@ export function Footer() {
                                 Your trusted partner in finding the perfect property. Premium real estate consulting services across
                                 India with unmatched expertise and personalized approach.
                             </p>
-                            <div className="space-y-3">
+                            {/* <div className="space-y-3">
                                 <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300">
                                     <MapPin className="h-4 w-4 text-green-600 transition-colors duration-300" />
                                     <span className="text-gray-600 text-sm group-hover:text-gray-800 transition-colors duration-300">
@@ -51,7 +51,7 @@ export function Footer() {
                                 <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300 cursor-pointer">
                                     <Phone className="h-4 w-4  text-green-600 transition-colors duration-300" />
                                     <span className="text-gray-600 text-sm group-hover:text-gray-800 transition-colors duration-300">
-                                        +91 7019402240
+                                        +91 8123295792
                                     </span>
                                 </div>
                                 <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300 cursor-pointer">
@@ -60,7 +60,7 @@ export function Footer() {
                                         info@proplord.com
                                     </span>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Services */}
@@ -70,16 +70,16 @@ export function Footer() {
                             </h4>
                             <ul className="flex flex-col gap-4">
                                 {services.map((service) => (
-                                    <li key={service} className="group/item">
-                                        <a
-                                            href="#"
+                                    <li key={service.name} className="group/item">
+                                        <Link
+                                            href={service.href}
                                             className="flex items-center text-gray-600 hover:text-gray-800 transition-all duration-300 hover:translate-x-2"
                                         >
                                             <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover/item:opacity-100 transition-all duration-300 text-red-500" />
                                             <span className="group-hover/item:bg-gradient-to-r text-sm group-hover/item:from-green-600 group-hover/item:to-red-500 group-hover/item:bg-clip-text group-hover/item:text-transparent transition-all duration-300">
-                                                {service}
+                                                {service.name}
                                             </span>
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -90,28 +90,28 @@ export function Footer() {
                             <h4 className="text-lg font-semibold text-gray-800 ml-5">Company</h4>
                             <ul className="flex flex-col gap-4 text-sm">
                                 {quickLinks.map((link) => (
-                                    <li key={link} className="group/item">
-                                        <a
-                                            href="#"
+                                    <li key={link.name} className="group/item">
+                                        <Link
+                                            href={link.href}
                                             className="flex items-center text-gray-600 hover:text-gray-800 transition-all duration-300 hover:translate-x-2"
                                         >
                                             <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover/item:opacity-100 transition-all duration-300 text-red-500" />
                                             <span className="group-hover/item:bg-gradient-to-r group-hover/item:from-green-600 group-hover/item:to-red-500 group-hover/item:bg-clip-text group-hover/item:text-transparent transition-all duration-300">
-                                                {link}
+                                                {link.name}
                                             </span>
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
                         {/* Locations */}
-                        <div className="flex flex-col gap-6 mt-2">
+                        {/* <div className="flex flex-col gap-6 mt-2">
                             <h4 className="text-lg font-semibold text-gray-800 ml-5">Popular Searches</h4>
                             <ul className="flex flex-col gap-4 text-sm">
                                 {locations.map((location) => (
                                     <li key={location} className="group/item">
-                                        <a
+                                        <Link
                                             href="#"
                                             className="flex items-center text-gray-600 hover:text-gray-800 transition-all duration-300 hover:translate-x-2"
                                         >
@@ -119,19 +119,40 @@ export function Footer() {
                                             <span className="group-hover/item:bg-gradient-to-r group-hover/item:from-green-600 group-hover/item:to-red-500 group-hover/item:bg-clip-text group-hover/item:text-transparent transition-all duration-300">
                                                 {location}
                                             </span>
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
+                        </div> */}
+
+                        <div className="space-y-3">
+                            <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300">
+                                <MapPin className="h-4 w-4 text-green-600 transition-colors duration-300" />
+                                <span className="text-gray-600 text-sm group-hover:text-gray-800 transition-colors duration-300">
+                                    Bangalore, India
+                                </span>
+                            </div>
+                            <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300 cursor-pointer">
+                                <Phone className="h-4 w-4  text-green-600 transition-colors duration-300" />
+                                <span className="text-gray-600 text-sm group-hover:text-gray-800 transition-colors duration-300">
+                                    +91 8123295792
+                                </span>
+                            </div>
+                            <div className="flex items-center space-x-3 group p-2 rounded-lg transition-all duration-300 cursor-pointer">
+                                <Mail className="h-4 w-4 text-green-600 transition-colors duration-300" />
+                                <span className="text-gray-600 text-sm group-hover:text-gray-800 transition-colors duration-300">
+                                    info@proplord.com
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="border-t border-green-200 py-8">
-                    <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+                    <div className="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0">
                         <p className="text-gray-500 text-sm">© 2024 Prop Lord. All rights reserved.</p>
 
-                        <div className="flex flex-wrap justify-center lg:justify-end space-x-6">
+                        {/* <div className="flex flex-wrap justify-center lg:justify-end space-x-6">
                             <a href="#" className="text-gray-500 hover:text-green-600 transition-colors duration-200 text-sm">
                                 Privacy Policy
                             </a>
@@ -144,7 +165,7 @@ export function Footer() {
                             <a href="#" className="text-gray-500 hover:text-green-600 transition-colors duration-200 text-sm">
                                 Sitemap
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

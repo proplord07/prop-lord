@@ -119,106 +119,59 @@ const partners = [
         name: "Godrej Properties",
         logo: "/partners/18.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/19.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/20.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/21.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/22.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/23.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/24.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/25.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/26.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/27.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/28.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/29.png",
     },
 
-
-    {
-        name: "Godrej Properties",
-        logo: "/partners/30.png",
-    },
-
-
-    {
-        name: "Godrej Properties",
-        logo: "/partners/31.png",
-    },
-
-
-    {
-        name: "Godrej Properties",
-        logo: "/partners/32.png",
-    },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/33.png",
     },
-
-
     {
         name: "Godrej Properties",
         logo: "/partners/34.png",
     },
-
-
-
-
 ];
 
 export function BusinessPartnersSection() {

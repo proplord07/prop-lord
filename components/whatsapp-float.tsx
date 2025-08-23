@@ -10,7 +10,7 @@ export default function WhatsAppFloat() {
 
     const handleStartChat = () => {
         // WhatsApp API URL - you can customize the phone number and message
-        const phoneNumber = "+917019402240";
+        const phoneNumber = "+918123295792";
         const message = "Hi! I'm interested in your property services. Can you help me?";
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
