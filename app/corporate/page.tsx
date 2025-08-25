@@ -33,43 +33,43 @@ export default function CorporatePage() {
         {
             title: "Tenant Representation",
             description:
-                "Corporate real estate services includes tenant representation with our focus on the tenant's best interests, we help you make an informed decision that best fits your business needs. We assist through providing relevant market knowledge, lease negotiation and renewal, micro and macro location analysis and much more to help you choose the right address!",
+                "At PROPLORD, we represent occupiers with a singular focus on securing spaces that meet strategic, operational, and financial goals—while fostering productive landlord–tenant relationships. For tenants, we provide location analysis, market benchmarking, and negotiation strategy to achieve the best terms. For landlords engaging with us in dual-capacity advisory, we ensure terms are fair, occupancy is sustainable, and relationships are built for long-term value creation.",
             icon: Users,
         },
         {
             title: "Facility Management",
             description:
-                "We ensure company's physical space runs like clockwork. From keeping the lights on and ensuring comfortable temperatures to managing maintenance and prioritizing employee safety. We also play a strategic role, optimizing costs through energy management and vendor negotiation. We consider regulations and contribute to a positive work environment, making employees feel valued and allowing the company to focus on its core mission.",
+                "Facility management, when viewed from both occupiers’ and property owners’ perspectives, supports operational efficiency, asset longevity, and occupant wellbeing. PROPLORD ensures that spaces operate seamlessly for tenants—covering maintenance, safety, and cost optimisation. For landlords, our focus extends to asset preservation, regulatory compliance, and sustaining tenant satisfaction, which translates to better retention and long-term asset performance.",
             icon: Settings,
         },
         {
             title: "Property Management",
             description:
-                "We ensure smooth building operations with preventative maintenance, skilled maintenance for specialized systems, and potentially managing amenities and tenant relations. By outsourcing this expertise, companies save time, potentially reduce costs, and mitigate risks, allowing them to focus on their core business while they valuable real estate asset are in good hands.",
+                "We manage assets in a way that protects owners’ investments while providing a positive experience for occupants. Tenants benefit from well-maintained, functional spaces; landlords benefit from preventative maintenance, cost optimisation, compliance assurance, and stable occupancy. PROPLORD balances both sides by applying technology, proactive upkeep, and transparent communication to reduce risk and enhance asset value.",
             icon: Home,
         },
         {
             title: "Built to Suit",
             description:
-                "We assist you in setting up tailored commercial spaces that fit your business requirements, to ensure you are able to maximise the operational space. We assist you in expanding your new facility to meet your corporate goals.",
+                "Built-to-suit solutions are about customisation and alignment. For occupiers, PROPLORD delivers spaces that fit processes, culture, and growth goals. For landlords or developers, we help match design and build specifications to market demand, ensuring higher lease uptake and asset relevance. The process—from planning to delivery—is guided by strategic oversight for both sides, aligning business needs with long-term capital value.",
             icon: Building2,
         },
         {
             title: "Lease Renewal and Rent Review",
             description:
-                "With the aim to ensure transparency, both parties are encouraged to review the rent/lease terms and with our expertise we ensure a smooth hustle free transaction.",
+                "Lease renewals and rent reviews are opportunities for mutual benefit when handled with expertise. PROPLORD helps occupiers secure favourable, sustainable terms while helping landlords maintain fair market value and consistent income. Our approach is transparent, data-driven, and negotiation-focused, ensuring both sides walk away satisfied and positioned for continued partnership.",
             icon: FileText,
         },
         {
             title: "Landlord Representation",
             description:
-                "We closely partner with landlords and developers to maximise their asset value by creating persuasive and result-oriented leasing programs.",
+                "For landlords and developers, PROPLORD creates high-impact leasing strategies backed by market intelligence. We position assets to attract quality occupiers and negotiate terms that encourage stability and profitability. When working in a broader market ecosystem, we ensure occupiers’ requirements align with landlords’ offerings, fostering agreements that serve long-term performance for both parties.",
             icon: Handshake,
         },
         {
             title: "Lease Structuring",
             description:
-                "Strategic leasing advice for your property; we deliver tailor made solutions for your corporate needs including lease management, optimizing the tenant mix that add to your bottom line, improving the rental profile and much more.",
+                "Lease structuring impacts both the occupier’s operational efficiency and the landlord’s revenue stability. PROPLORD designs lease agreements that balance tenant flexibility with owner profitability, optimising tenant mix and enhancing building value. We provide input on terms, clauses, and asset positioning so that leases remain commercially sound for landlords while being operationally effective for tenants.",
             icon: Briefcase,
         },
     ];
@@ -91,8 +91,7 @@ export default function CorporatePage() {
                             Corporate Real Estate
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed font-opensans animate-fade-in-up animation-delay-200">
-                            We provide comprehensive work space acquisition and disposition services with detailed analysis of market
-                            conditions through a well equipped team with deep local knowledge and expertise.
+                        At PROPLORD, we specialize in delivering end-to-end corporate real estate solutions that empower businesses to operate, expand, and thrive strategically. Our expert advisory team combines deep local knowledge with global perspectives, offering comprehensive workspace acquisition and disposition services tailored to your operational objectives. By leveraging detailed market analysis, occupancy trend insights, and financial modeling, we ensure every decision is driven by data and aligned with long-term business goals. Whether you are setting up a headquarters, expanding to new markets, or optimizing existing assets, PROPLORD acts as your trusted realty mastermind—navigating negotiations, identifying high-value opportunities, and securing spaces that enhance productivity, brand presence, and bottom-line performance. With us, your corporate real estate strategy becomes a competitive advantage.
                         </p>
 
                     </div>

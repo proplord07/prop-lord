@@ -111,13 +111,13 @@ Please get in touch with me. Thank you!`;
         {
             title: "Acquisition & Disposition for FUNDS & HNI's",
             description:
-                "We provide strategic solutions for all your hospitality needs including acquisition, disposition, market analysis and transaction management. Our widespread network of connections and expertise ensures our clients benefit with a smooth transaction.",
+                "At PROPLORD, we approach hospitality assets as both lifestyle-driven destinations and strategic investments. For funds, HNIs, and institutional investors, we identify and evaluate hotel and resort opportunities based on brand positioning, market potential, operational performance, and projected returns. For owners and sellers, we structure dispositions to attract qualified buyers, optimise pricing, and ensure smooth transitions. Our process includes comprehensive market analysis, asset valuation, and transaction management — reducing risk while maximising long-term value. Whether acquiring a landmark property or divesting an underperforming asset, PROPLORD ensures every deal is driven by rigorous insight and absolute transparency.",
             icon: Building2,
         },
         {
             title: "Operator Search",
             description:
-                "Looking for a hotel group to run an existing hotel or planned hotel? Or looking for someone who will successfully manage your hotel premises? Your search ends here as we assist you with the selection of a suitable operator. We also advise you in the financial and legal aspects including lease management, franchise or license agreement.",
+                "Securing the right hospitality operator is pivotal to asset performance. At PROPLORD, we connect property owners, developers, and investors with hotel operators whose operational vision aligns with brand aspirations and market positioning. We assess operator capabilities, portfolio strengths, and financial stability to ensure the right fit for both new developments and existing hotels. Our advisory encompasses lease structuring, management contracts, franchise and license agreements, as well as negotiations that protect owner interests while enabling operator success. The result — hospitality assets run with operational excellence, delivering guest satisfaction, brand equity, and sustainable returns.",
             icon: Search,
         },
     ];
@@ -139,10 +139,7 @@ Please get in touch with me. Thank you!`;
                     <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10 animate-fade-in-up">
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans">HOSPITALITY</h1>
                         <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed font-sans animate-fade-in-up animation-delay-200">
-                            With exclusive properties and exposure to the various locales of Bangalore, our hospitality consulting
-                            team understands the multiple drivers propelling this industry forward while providing strategic solutions
-                            that open up avenues for hoteliers and individuals to invest, operate, find new ventures and add much more
-                            to their hospitality portfolios.
+                        At PROPLORD, we understand that hospitality is driven by both strategic vision and exceptional service. With exclusive access to prime properties and deep knowledge of Bangalore’s most sought-after locales, our hospitality advisory team expertly navigates the sector’s unique dynamics. We provide comprehensive strategic guidance to hoteliers, investors, and entrepreneurs—helping them identify lucrative opportunities, optimize operations, and unlock new avenues for growth. Whether you aim to acquire, expand, reposition, or diversify your hospitality portfolio, PROPLORD combines market intelligence, innovative insight, and negotiation expertise to ensure every venture is future-ready and profitable. As your trusted realty mastermind, we turn hospitality ambitions into thriving, enduring assets that deliver memorable guest experiences and long-term value.
                         </p>
                         <div className="animate-bounce mt-8">
                             <div className="w-6 h-6 border-2 border-white rounded-full mx-auto opacity-75"></div>
