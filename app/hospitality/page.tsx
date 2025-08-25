@@ -139,10 +139,7 @@ Please get in touch with me. Thank you!`;
                     <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10 animate-fade-in-up">
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans">HOSPITALITY</h1>
                         <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed font-sans animate-fade-in-up animation-delay-200">
-                            With exclusive properties and exposure to the various locales of Bangalore, our hospitality consulting
-                            team understands the multiple drivers propelling this industry forward while providing strategic solutions
-                            that open up avenues for hoteliers and individuals to invest, operate, find new ventures and add much more
-                            to their hospitality portfolios.
+                        At PROPLORD, we understand that hospitality is driven by both strategic vision and exceptional service. With exclusive access to prime properties and deep knowledge of Bangalore’s most sought-after locales, our hospitality advisory team expertly navigates the sector’s unique dynamics. We provide comprehensive strategic guidance to hoteliers, investors, and entrepreneurs—helping them identify lucrative opportunities, optimize operations, and unlock new avenues for growth. Whether you aim to acquire, expand, reposition, or diversify your hospitality portfolio, PROPLORD combines market intelligence, innovative insight, and negotiation expertise to ensure every venture is future-ready and profitable. As your trusted realty mastermind, we turn hospitality ambitions into thriving, enduring assets that deliver memorable guest experiences and long-term value.
                         </p>
                         <div className="animate-bounce mt-8">
                             <div className="w-6 h-6 border-2 border-white rounded-full mx-auto opacity-75"></div>
