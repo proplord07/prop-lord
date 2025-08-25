@@ -37,25 +37,25 @@ export default function ResidentialPage() {
         {
             title: "New Launch Sales",
             description:
-                "Our team connects with builders to provide you with home buying options or investing options during the project launch period of the project. Assisting you in negotiations to help you mitigate any risks.",
+                "At PROPLORD, we bridge buyers, investors, and developers during the project launch phase to create opportunities that are strategically timed and value-driven. For home seekers and investors, we identify projects with strong fundamentals—assessing location, pricing, builder credibility, and long-term appreciation potential. For developers, we connect with qualified prospects and structure negotiations that ensure transparent, win–win outcomes. Our role spans due diligence, market comparison, and risk mitigation, ensuring every early-stage purchase is both secure and strategically advantageous.",
             icon: Rocket,
         },
         {
             title: "Resale Properties",
             description:
-                "Deep understanding of the local market along with our financial expertise allows us to cater to the demands and needs of individuals and corporates looking to buy properties in the secondary or re sale market.",
+                "The secondary market offers unique buying and selling opportunities, each requiring a refined approach. At PROPLORD, we combine deep local market insight with objective analysis to guide both purchasers and sellers of villas, apartments, and plots toward optimal results. Buyers gain access to curated resale opportunities that meet lifestyle and investment priorities, while sellers benefit from accurate valuation, positioning, and targeted outreach. Our aim is to match quality assets with informed decision-makers, ensuring transparency and fairness in every resale transaction.",
             icon: RefreshCw,
         },
         {
             title: "Property Management",
             description:
-                "Are you an NRI (Non-Resident Indian) or an individual seeking to maximize the potential of your real estate investments in Bangalore? Look no further! Our dedicated property management services in Bangalore are tailored to meet your specific needs, ensuring that your properties are expertly managed, even if you're miles away.",
+                "Managing property from a distance requires trust, precision, and consistent oversight. PROPLORD offers specialised property management for NRIs and owners with limited on-ground presence—ensuring assets in Bangalore are maintained, tenanted, and yielding maximum potential. Services include rent collection, maintenance coordination, compliance management, and strategic upgrades to enhance asset value. For owners, we provide transparent reporting and proactive asset care; for tenants, we ensure responsive service and a well-maintained living environment. Our approach protects value today and preserves potential for tomorrow.",
             icon: Home,
         },
         {
             title: "Investment Sales",
             description:
-                "We provide investors with an in-depth understanding of the complex real estate market and offer comprehensive capital market services including acquisition/disposition and advisory across all residential product segments.",
+                "Real estate investment demands insight into both market cycles and long-term trends. PROPLORD advises private investors, institutions, and high-net-worth individuals on acquisitions, dispositions, and portfolio strategies across residential segments. We assess risk, returns, and timing, providing structured advice rooted in capital market expertise. Sellers benefit from targeted positioning to attract serious investors; buyers receive rigorous due diligence and accurate forecasting. Our goal is to ensure each investment decision—whether entry or exit—is grounded in strategy, backed by data, and aligned with growth objectives.",
             icon: TrendingUp,
         },
     ];
