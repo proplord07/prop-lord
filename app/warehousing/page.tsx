@@ -31,31 +31,31 @@ export default function WarehousingPage() {
         {
             title: "Built to Suit Warehouse",
             description:
-                "Built to suit Warehouses for rent and industrial set ups tailored to fit your business requirements; a Built to Suit warehouse is specifically designed to ensure you are able to maximise the functional space. We assist you in expanding your new facility.",
+                "At PROPLORD, we see built-to-suit warehouses as strategic assets designed for operational precision and long-term value. For occupiers, we ensure facilities are tailored to workflow, storage requirements, and expansion plans, maximising both functionality and efficiency. For landlords and developers, we advise on specifications that align with tenant needs while protecting long-term asset performance. From concept to delivery, we guide location selection, layout optimisation, and compliance, ensuring the final space serves current requirements and future growth opportunities.",
             icon: Warehouse,
         },
         {
             title: "Lease Renewal and Rent Review",
             description:
-                "With the aim to ensure transparency, both parties are encouraged to review the rent/lease terms and with our expertise we ensure a smooth hustle free transaction.",
+                "Renewal and rent review processes work best when they balance the interests of both landlord and occupier. PROPLORD applies data-driven benchmarking, market analysis, and transparent negotiation to arrive at terms that are commercially fair and sustainable. We help occupiers secure competitive arrangements that support operational stability, and enable landlords to maintain occupancy levels, protect asset value, and ensure income consistency.",
             icon: FileText,
         },
         {
             title: "Tenant Representation",
             description:
-                "With sole focus on the tenant's best interests, we help you make an informed decision that best fits your warehousing needs. We assist through providing relevant market knowledge, lease negotiation and renewal, micro and macro location analysis and much more to help you choose the right facility!",
+                "Our tenant representation in warehousing focuses on operational fit, cost efficiency, and strategic location advantage. For occupiers, PROPLORD provides market insights, micro and macro location analysis, and negotiation expertise to secure ideal spaces on optimal terms. While acting primarily for tenants, we also ensure the process fosters constructive landlord–tenant relationships, enabling smoother transactions and stronger long-term alignments.",
             icon: Users,
         },
         {
             title: "Landlord Representation",
             description:
-                "We closely partner with landlords and developers to maximize their asset value by creating persuasive and result-oriented leasing programs.",
+                "For landlords and developers in the warehousing and industrial sector, PROPLORD creates leasing programs designed to maximise asset value and attract quality tenants. Our process includes market positioning, tenant targeting, and lease term optimisation. By aligning tenant needs with ownership objectives, we drive sustainable occupancy, consistent returns, and a positive reputation in the logistics and industrial market.",
             icon: Handshake,
         },
         {
             title: "Lease Structuring",
             description:
-                "Strategic leasing advise for your property; we deliver tailor made solutions for your corporate needs including lease management, optimizing the tenant mix that add to your bottom line, improving the rental profile and much more.",
+                "An effective warehouse lease must balance operational flexibility for tenants with financial security for landlords. PROPLORD designs lease strategies that account for rental profile improvement, tenant mix suitability, occupancy stability, and long-term asset performance. We advise on customised terms, risk allocation, and strategic clauses so that agreements remain beneficial and resilient for both parties throughout the lease lifecycle.",
             icon: Briefcase,
         },
     ];
