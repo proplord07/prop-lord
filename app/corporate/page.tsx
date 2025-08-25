@@ -91,8 +91,7 @@ export default function CorporatePage() {
                             Corporate Real Estate
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed font-opensans animate-fade-in-up animation-delay-200">
-                            We provide comprehensive work space acquisition and disposition services with detailed analysis of market
-                            conditions through a well equipped team with deep local knowledge and expertise.
+                        At PROPLORD, we specialize in delivering end-to-end corporate real estate solutions that empower businesses to operate, expand, and thrive strategically. Our expert advisory team combines deep local knowledge with global perspectives, offering comprehensive workspace acquisition and disposition services tailored to your operational objectives. By leveraging detailed market analysis, occupancy trend insights, and financial modeling, we ensure every decision is driven by data and aligned with long-term business goals. Whether you are setting up a headquarters, expanding to new markets, or optimizing existing assets, PROPLORD acts as your trusted realty mastermind—navigating negotiations, identifying high-value opportunities, and securing spaces that enhance productivity, brand presence, and bottom-line performance. With us, your corporate real estate strategy becomes a competitive advantage.
                         </p>
 
                     </div>
