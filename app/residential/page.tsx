@@ -106,8 +106,7 @@ export default function ResidentialPage() {
                             Residential Real Estate
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed font-opensans animate-fade-in-up animation-delay-200">
-                            We provide comprehensive residential real estate solutions with detailed analysis of market conditions
-                            through a well equipped team with deep local knowledge and expertise.
+                        At PROPLORD, we combine unrivaled knowledge of local and city-wide residential markets with a deeply personalized approach to help you make the smartest choice for your home. We understand that every individual’s needs, aspirations, and investment goals are unique, which is why our advisory goes beyond traditional services—merging data-driven market research, insightful analysis, and visionary guidance to navigate the complexities of the residential property landscape. Whether you are a first-time buyer, a seasoned investor, or searching for your dream home, we act as your trusted realty mastermind, delivering clarity, confidence, and strategies tailored exclusively to you. We don’t just help you find a property—we help you secure a home that enriches your lifestyle and stands as a solid investment for the future, all built on the foundations of transparency, trust, and long-term value creation.
                         </p>
 
                     </div>
