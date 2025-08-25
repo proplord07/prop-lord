@@ -79,8 +79,7 @@ export default function WarehousingPage() {
                             Warehousing & Logistics
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed font-opensans animate-fade-in-up animation-delay-200">
-                            We provide comprehensive warehousing and logistics solutions with detailed analysis of market conditions
-                            through a well equipped team with deep local knowledge and expertise.
+                        At PROPLORD, we understand that in today’s fast-paced economy, warehousing, industrial, and logistics capabilities are the backbone of business growth. Leveraging our extensive network of strategically located warehouses and industrial facilities across the country, we deliver supply chain solutions that empower companies to expand swiftly, efficiently, and strategically. Our advisory approach focuses on giving you flexibility, scalability, and location intelligence—critical competitive advantages that ensure your operations meet market demands with speed and precision. From identifying optimal sites to negotiating the best terms and optimizing long-term operational efficiency, PROPLORD acts as your trusted realty mastermind—helping you build logistics frameworks that not only support your current business needs but also position you for sustainable growth in the future.
                         </p>
                     </div>
                 </div>
