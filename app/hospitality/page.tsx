@@ -111,13 +111,13 @@ Please get in touch with me. Thank you!`;
         {
             title: "Acquisition & Disposition for FUNDS & HNI's",
             description:
-                "We provide strategic solutions for all your hospitality needs including acquisition, disposition, market analysis and transaction management. Our widespread network of connections and expertise ensures our clients benefit with a smooth transaction.",
+                "At PROPLORD, we approach hospitality assets as both lifestyle-driven destinations and strategic investments. For funds, HNIs, and institutional investors, we identify and evaluate hotel and resort opportunities based on brand positioning, market potential, operational performance, and projected returns. For owners and sellers, we structure dispositions to attract qualified buyers, optimise pricing, and ensure smooth transitions. Our process includes comprehensive market analysis, asset valuation, and transaction management — reducing risk while maximising long-term value. Whether acquiring a landmark property or divesting an underperforming asset, PROPLORD ensures every deal is driven by rigorous insight and absolute transparency.",
             icon: Building2,
         },
         {
             title: "Operator Search",
             description:
-                "Looking for a hotel group to run an existing hotel or planned hotel? Or looking for someone who will successfully manage your hotel premises? Your search ends here as we assist you with the selection of a suitable operator. We also advise you in the financial and legal aspects including lease management, franchise or license agreement.",
+                "Securing the right hospitality operator is pivotal to asset performance. At PROPLORD, we connect property owners, developers, and investors with hotel operators whose operational vision aligns with brand aspirations and market positioning. We assess operator capabilities, portfolio strengths, and financial stability to ensure the right fit for both new developments and existing hotels. Our advisory encompasses lease structuring, management contracts, franchise and license agreements, as well as negotiations that protect owner interests while enabling operator success. The result — hospitality assets run with operational excellence, delivering guest satisfaction, brand equity, and sustainable returns.",
             icon: Search,
         },
     ];
