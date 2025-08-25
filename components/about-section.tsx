@@ -5,23 +5,23 @@ import { motion } from "framer-motion";
 
 const aboutData = [
     {
-        title: "Who we are?",
+        title: "Our Story",
         description:
-            "",
+            "PROPLORD was founded 27 years ago with a vision : to be the ultimate real estate mastermind guiding clients through the complexities of property investment, ownership, and development. We believe real estate is more than transactions—it’s about building enduring relationships and crafting strategic advice that enables our clients to navigate the property landscape with confidence. Leveraging in-depth market intelligence, data-driven insights, and customised solutions, we empower buyers, investors, and businesses to make decisions that unlock long-term value. Our promise is simple: to be your most reliable partner, delivering clarity and conviction at every step of your real estate journey. At PROPLORD we  do not just guide; we mentor and strategize, transforming the complex real estate ecosystem into clear, actionable pathways. Our commitment to integrity ensures every recommendation is rooted in honesty and thorough research, building trust that lasts well beyond the deal.  Trust PROPLORD to be the guiding force behind your property ambitions, helping you achieve sustainable growth through informed, confident decisions.",
         image: "/about-us/us.jpg",
         gradient: "from-blue-600 via-purple-600 to-indigo-800",
     },
     {
-        title: "Why Us?",
+        title: "Our Vision",
         description:
-            "Our leadership team boasts industry expertise with a deep understanding of changing market conditions. We take pride in knowing the pulse of the industry and delivering the best spaces to add merit to your business and assets.",
+            "To be the most trusted and influential real estate advisory from Bangalore, renowned for delivering exceptional service, innovative solutions, and distinguished opportunities in luxury and investment properties. We aspire to shape the future of real estate by exceeding expectations, embracing technology, and building lasting relationships that transform ambitions into enduring legacies.",
         image: "/about-us/team.jpg",
         gradient: "from-emerald-600 via-teal-600 to-cyan-800",
     },
     {
-        title: "What we deliver?",
+        title: "Our Mission",
         description:
-            "We are a dynamic, agile, fast-growing company fueled by innovation, dedication, and expertise that spans cities and service lines. We endeavor to deliver real estate solutions that add value to your future.",
+            "At Proplord, our mission is to redefine the real estate journey—making every experience seamless, rewarding, and individually tailored. Through expertise, integrity, and market insight, we empower clients to make informed, confident decisions that secure their prosperity and prestige. We are dedicated to guiding homebuyers, investors, and luxury seekers with transparency and care, setting new benchmarks for excellence in property advisory.",
         image: "/about-us/deliver.jpg",
         gradient: "from-orange-600 via-red-600 to-pink-800",
     },
