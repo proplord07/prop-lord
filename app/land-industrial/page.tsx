@@ -38,13 +38,13 @@ export default function LandIndustrialPage() {
         {
             title: "Expert Guidance on Land Acquisition",
             description:
-                "We Address Advisors, we specialize in helping organizations navigate the complex world of land acquisition. Our team of experienced professionals possesses in-depth knowledge of local real estate markets, allowing us to identify prime properties that align with your project goals. We provide comprehensive support throughout the entire process, from initial site scouting to final negotiations.",
+                "At PROPLORD, we approach land acquisition as a strategic foundation for long-term value creation. For buyers and developers, we identify high-potential parcels—ranging from expansive commercial sites to residential and mixed-use plots—through a process rooted in market intelligence, zoning insight, and feasibility analysis. For landowners and sellers, we provide positioning strategies that highlight the asset’s strengths and align with serious, qualified buyers.",
             icon: MapPin,
         },
         {
             title: "Tailored Solutions",
             description:
-                "We understand that every project is unique. That's why we offer customized solutions tailored to your specific requirements. Whether you're seeking a large-scale commercial development site or a smaller-scale residential project, our team will work closely with you to identify the ideal land parcel. We take into account factors such as location, zoning regulations, and potential development constraints to ensure that your investment is a sound one.",
+                "We recognise that every project is unique, so our solutions are customised—factoring in location advantages, development constraints, legal due diligence, and potential for appreciation. Our role extends from initial site scouting to negotiation, ensuring transactions are efficient, transparent, and mutually beneficial.",
             icon: Settings,
         },
         {
@@ -56,7 +56,7 @@ export default function LandIndustrialPage() {
         {
             title: "Comprehensive Support",
             description:
-                "We offer a comprehensive range of services to support your land acquisition journey. Our team can assist with market analysis, due diligence, project feasibility studies, and more. We provide expert guidance and support at every stage of the process, ensuring that your project stays on track and meets your objectives.",
+                "From market analysis and valuation to environmental assessments and compliance checks, we support each stage of the acquisition process. With PROPLORD as the realty mastermind, land transactions become well-informed, future-ready decisions for all parties involved.",
             icon: HeadphonesIcon,
         },
     ];
@@ -65,7 +65,7 @@ export default function LandIndustrialPage() {
         {
             title: "Tailored Industrial Space Solutions",
             description:
-                "We understand that every manufacturing business has unique requirements. Our team works closely with you to identify the ideal industrial space that meets your specific needs, considering factors such as size, location, amenities, and infrastructure. Whether you're looking to set up a new manufacturing facility or expand your existing operations, we have the expertise to find the perfect fit.",
+                "At PROPLORD, we connect businesses with industrial spaces that are not just operationally sound but strategically placed for long-term competitiveness. Buyers, tenants, and investors benefit from our deep sector knowledge—whether the need is for manufacturing plants, specialised facilities, or logistics hubs. Sellers and landlords gain from our ability to position spaces attractively within the market, highlighting location, capacities, and expansion potential.",
             icon: Factory,
         },
         {
@@ -77,7 +77,7 @@ export default function LandIndustrialPage() {
         {
             title: "Industry-Specific Expertise",
             description:
-                "Our team has a deep understanding of the unique requirements of various industries, from manufacturing to logistics and warehousing. We leverage this knowledge to provide tailored solutions that address your specific needs and challenges. Whether you're in the automotive, pharmaceutical, or technology sector, we have the expertise to help you find the ideal industrial space for your business.",
+                "From automotive and pharmaceutical to technology and warehousing, we understand the functional and compliance requirements of each sector. Our role is to translate those needs into real, high-value property matches that deliver efficiency, stability, and growth, balancing both user operational goals and owner investment returns.",
             icon: Cog,
         },
     ];
