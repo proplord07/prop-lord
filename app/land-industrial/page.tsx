@@ -97,8 +97,7 @@ export default function LandIndustrialPage() {
                             Land & Industrial
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed font-opensans animate-fade-in-up animation-delay-200">
-                            We provide comprehensive land acquisition and industrial space solutions with detailed analysis of market
-                            conditions through a well equipped team with deep local knowledge and expertise.
+                        At PROPLORD, we view land as a precious and finite asset that forms the cornerstone of  growth and strategic real estate opportunities. Leveraging comprehensive market intelligence and a broad inventory of prime land and industrial land options, we guide our clients through every step of investment—from detailed value assessment to legal due diligence and future potential forecasting. Our expert advisory goes beyond transactions, focusing on maximizing the strategic and economic value of your land holdings with foresight and precision. PROPLORD acts as your trusted realty mastermind, ensuring your land investments translate into sustainable growth, optimized returns, and transformative impact in an ever-evolving market landscape.
                         </p>
                     </div>
                 </div>
